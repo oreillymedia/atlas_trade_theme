@@ -76,6 +76,12 @@ div[data-type="book"] {
   -ah-kerning-mode: pair;
 }
 
+/* general inlines */
+
+a {
+  font-style: italic;
+}
+
 /* cover page */
 
 div.coverpage {
@@ -217,6 +223,10 @@ section[data-type="dedication"] {
   }
 }
 
+nav[data-type="toc"] a {
+  font-style: normal;
+}
+
 nav[data-type="toc"] {
   page: toc;
 }
@@ -257,10 +267,16 @@ nav[data-type="toc"] li[data-type="preface"],
 nav[data-type="toc"] li[data-type="foreword"], 
 nav[data-type="toc"] li[data-type="glossary"], 
 nav[data-type="toc"] li[data-type="index"] {
-  font-family: 'Crimson-SemiboldItalic';
-  font-style: italic;
   font-size: 9pt;
   line-height: 11pt;
+}
+
+nav[data-type="toc"] li[data-type="preface"] a, 
+nav[data-type="toc"] li[data-type="foreword"] a, 
+nav[data-type="toc"] li[data-type="glossary"] a, 
+nav[data-type="toc"] li[data-type="index"] a {
+  font-family: 'Crimson-SemiboldItalic';
+  font-style: italic;
 }
 
 nav[data-type="toc"] li[data-type="preface"] ol, 
@@ -447,38 +463,62 @@ section[data-type="chapter"] > h1:before {
 
 @page appendix:first {
   padding-top: ;
-  bottom-right {
-
+  @bottom-right {
+    text-align: right;
+    content: counter(page);
+  }
+  @bottom-left {
+    content: normal;
   }
 }
 
 @page appendix:left {
   @bottom-left {
-    content: counter(page)" "string(AppendixTitle);
+    text-align: left;
+    content: counter(page);
+  }
+  @bottom-right {
+    text-align: right;
+    content: "Appendix "counter(AppendixNumber, upper-alpha)", "string(ChapterTitle);
   }
 }
 
 @page appendix:right {
   @bottom-right {
-    content: counter(page)" "string(AppendixTitle);
+    text-align: right;
+    content: counter(page);
+  }
+  @bottom-left {
+    text-align: left;
+    content: string(SectionTitle);
   }
 }
 
 section[data-type="appendix"] {
   page: appendix;
   page-break-before: right; /* forces new chapters to start on a right hand page */
+  counter-reset: TableNumber footnote;
 }
 
 section[data-type="appendix"] > h1 {
-  string-set: AppendixTitle self;
-  margin-bottom: ;
+  font-family: 'OpenSans-CondBold';
+  font-size: 18pt;
+  line-height: 22pt;
+  string-set: ChapterTitle self;
+  margin-bottom: 28pt;
+  text-align: center;
+  counter-increment: AppendixNumber;
 }
 
-section[data-type="appendix"] { string-set: Section self; } /* fallback for chapters with no sect1s */
-
 section[data-type="appendix"] > h1:before {
-  counter-increment: ChapterNumber;
-  content: "Appendix " counter(AppendixNumber);
+  font-family: 'OpenSans-Semibold';
+  font-size: 9pt;
+  text-transform: uppercase;
+  content: "Appendix " counter(AppendixNumber, upper-alpha);
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 34pt;
 }
 
 /* sections */
@@ -681,4 +721,17 @@ aside code,
 table code {
   font-size: inherit;
   line-height: inherit;
+}
+
+/* blockquote */
+
+blockquote {
+  font-family: 'OpenSans-Regular';
+  font-size: 7.5pt;
+  line-height: 11pt;
+  margin-left: 0.1667in;
+}
+
+blockquote p {
+  text-indent: 0;
 }
