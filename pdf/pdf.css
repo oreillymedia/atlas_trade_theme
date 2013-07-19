@@ -433,7 +433,7 @@ section[data-type="chapter"]:first-of-type {
 section[data-type="chapter"] {
   page: chapter;
   page-break-before: right; /* forces new chapters to start on a right hand page */
-  counter-reset: TableNumber footnote;
+  counter-reset: TableNumber FigureNumber footnote;
 }
 
 section[data-type="chapter"] > h1 {
@@ -551,11 +551,11 @@ section[data-type="sect3"] > h3 {
 
 /* lists */
 
-ul {
+ul, ol {
   margin: 7pt 0 7pt .33in;
 }
 
-ul li {
+ul li, ol li {
   font-family: 'Crimson-Roman';
   font-size: 11pt;
   line-height: 14pt;
@@ -633,6 +633,36 @@ table p {
 td pre.programlisting, td pre.screen, td pre.literallayout, td code {
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+/* figures */
+
+figure {
+  margin-top: 13pt;
+  margin-bottom: 16pt;
+  padding: 0;
+  display: block;
+}
+
+figcaption {
+  font-family: 'OpenSans-Reguar';
+  font-size: 8.5pt;
+  line-height: 11pt;
+  border-top: 0.5pt solid cmyk(0%,0%,0%,100%);
+  padding-top: 4pt;
+  margin-top: 0pt;
+  display: block;
+  counter-increment: FigureNumber;
+}
+
+figcaption:before {
+  font-family: 'OpenSans-Semibold';
+  content: "Figure " counter(ChapterNumber) "-" counter(FigureNumber) ". ";
+}
+
+figure img {
+  max-width: 100%;
+  margin: 0;
 }
 
 /* sidebars */
