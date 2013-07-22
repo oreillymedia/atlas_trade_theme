@@ -478,7 +478,7 @@ section[data-type="chapter"] > h1 {
   font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 18pt;
   line-height: 22pt;
-  string-set: ChapterTitle self;
+  string-set: ChapterTitle self, SectionTitle self;
   margin-bottom: 28pt;
   text-align: center;
   counter-increment: ChapterNumber;
@@ -763,7 +763,7 @@ div[data-type="warning"] p {
 /* code */
 
 pre, code {
-  font-family: 'UbuntuMono-Regular';
+  font-family: 'UbuntuMono-Regular', monospace;
 }
 
 pre {
