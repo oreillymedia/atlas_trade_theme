@@ -40,7 +40,6 @@
 }
 
 @page :blank { /* defining a truly blank master page */
-  border-bottom: none;
   @bottom-left {
 	  content: none;
 	}
@@ -253,6 +252,15 @@ nav[data-type="toc"] li[data-type="appendix"] {
 
 nav[data-type="toc"] li[data-type="part"] { 
   margin-top: 18pt;
+  border-bottom: 0.25pt solid cmyk(0%,0%,0%,100%);
+  padding-bottom: 4pt;
+}
+
+nav[data-type="toc"] li[data-type="part"] > a { 
+  border-bottom: 0.25pt solid cmyk(0%,0%,0%,100%);
+  padding-bottom: 4pt;
+  width: 100%;
+  display: inline-block;
 }
 
 nav[data-type="toc"] li[data-type="chapter"] { 
@@ -297,6 +305,11 @@ nav[data-type="toc"] li[data-type="forward"] a:after {
 nav[data-type="toc"] li[data-type="chapter"] a:after, 
 nav[data-type="toc"] li[data-type="appendix"] a:after {
   content: leader(" ") target-counter(attr(href, url), page, decimal);
+}
+
+nav[data-type="toc"] li[data-type="part"] ol {
+  margin-left: 0;
+  text-indent: 0;
 }
 
 nav[data-type="toc"] li[data-type="chapter"] ol { 
@@ -424,6 +437,15 @@ div[data-type="part"] > h1:before {
   @bottom-left {
     text-align: left;
     content: string(SectionTitle);
+  }
+}
+
+@page chapter:blank { 
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
   }
 }
 
