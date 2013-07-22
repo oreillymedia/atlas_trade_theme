@@ -108,8 +108,8 @@ TKTK {
 
 /* reset counters */
 
-div[data-type="book"], section[data-type="chapter"] {
-  counter-reset: page 1 titlepage PartNumber ChapterNumber AppendixNumber footnote Section;
+body[data-type="book"] {
+  counter-reset: page 1 titlepage PartNumber ChapterNumber AppendixNumber FigureNumber TableNumber footnote Section;
 }
 
 /* frontmatter */
@@ -248,6 +248,7 @@ nav[data-type="toc"] li[data-type="appendix"] {
   line-height: 12pt;
   text-transform: uppercase;
   margin-left: 0;
+  text-indent: 0;
 }
 
 nav[data-type="toc"] li[data-type="part"] { 
@@ -445,8 +446,6 @@ section[data-type="chapter"] > h1 {
   text-align: center;
   counter-increment: ChapterNumber;
 }
-
-section[data-type="chapter"] { string-set: SectionTitle self; } /* fallback for chapters with no sect1s */
 
 section[data-type="chapter"] > h1:before {
   font-family: 'OpenSans-Semibold';
@@ -652,11 +651,11 @@ figcaption {
   padding-top: 4pt;
   margin-top: 0pt;
   display: block;
-  counter-increment: FigureNumber;
 }
 
 figcaption:before {
   font-family: 'OpenSans-Semibold';
+  counter-increment: FigureNumber;
   content: "Figure " counter(ChapterNumber) "-" counter(FigureNumber) ". ";
 }
 
