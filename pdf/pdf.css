@@ -7,14 +7,14 @@
 
 @page :left {
   @bottom-left {
-    font-family: 'OpenSans-Regular';
+    font-family: 'OpenSans-Regular', sans-serif;
     font-size: 8pt;
     padding-top: 17pt;
     margin-top: 0;
     vertical-align: top;
   }
   @bottom-right {
-    font-family: 'OpenSans-Regular';
+    font-family: 'OpenSans-Regular', sans-serif;
     font-size: 8pt;
     padding-top: 17pt;
     margin-top: 0;
@@ -24,14 +24,14 @@
 
 @page :right {
   @bottom-right {
-    font-family: 'OpenSans-Regular';
+    font-family: 'OpenSans-Regular', sans-serif;
     font-size: 8pt;
     padding-top: 17pt;
     margin-top: 0;
     vertical-align: top;
   }
   @bottom-left {
-    font-family: 'OpenSans-Regular';
+    font-family: 'OpenSans-Regular', sans-serif;
     font-size: 8pt;
     padding-top: 17pt;
     margin-top: 0;
@@ -61,7 +61,7 @@ section[data-type="sect3"] > h3 + p {
 }
 
 p, dd {
-  font-family: 'Crimson-Roman';
+  font-family: 'Crimson-Roman', serif;
   text-indent: 0.167in;
   font-size: 11pt;
   line-height: 14pt;
@@ -122,7 +122,7 @@ section[data-type="titlepage"] {
 }
 
 section[data-type="halftitlepage"] h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 16pt;
   line-height: 18pt;
   border-bottom: 0.5pt solid cmyk(0%,0%,0%,100%);
@@ -131,7 +131,7 @@ section[data-type="halftitlepage"] h1 {
 }
 
 section[data-type="titlepage"] h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 21pt;
   line-height: 24pt;
   border-bottom: 0.5pt solid cmyk(0%,0%,0%,100%);
@@ -140,7 +140,7 @@ section[data-type="titlepage"] h1 {
 }
 
 section[data-type="titlepage"] h2 {
-  font-family: 'OpenSans-SemiboldItalic';
+  font-family: 'OpenSans-SemiboldItalic', sans-serif;
   font-size: 12pt;
   line-height: 15pt;
   padding-left: 1.7in;
@@ -152,7 +152,7 @@ section[data-type="titlepage"] div.author {
 }
 
 section[data-type="titlepage"] p.author {
-  font-family: 'Crimson-Roman';
+  font-family: 'Crimson-Roman', serif;
   font-size: 13pt;
   line-height: 16pt;
   margin-top: 0pt;
@@ -160,14 +160,14 @@ section[data-type="titlepage"] p.author {
 }
 
 section[data-type="titlepage"] p.publishername {
-  font-family: 'Crimson-Roman';
+  font-family: 'Crimson-Roman', serif;
   font-size: 11pt;
   line-height: 14pt;
   float: bottom;
 }
 
 section[data-type="titlepage"] div.locations {
-  font-family: 'Crimson-Roman';
+  font-family: 'Crimson-Roman', serif;
   font-size: 11pt;
   line-height: 14pt;
   float: bottom;
@@ -179,7 +179,7 @@ section[data-type="copyright-page"] {
 }
 
 section[data-type="dedication"] {
-  font-family: 'Crimson-Italic';
+  font-family: 'Crimson-Italic', serif;
   font-style: italic;
   page: blank;
   page-break-after: always;
@@ -222,6 +222,15 @@ section[data-type="dedication"] {
   }
 }
 
+@page toc:blank { 
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+
 nav[data-type="toc"] a {
   font-style: normal;
 }
@@ -231,7 +240,7 @@ nav[data-type="toc"] {
 }
 
 nav[data-type="toc"] > h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 18pt;
   line-height: 22pt;
   margin-top: 72pt;
@@ -242,7 +251,7 @@ nav[data-type="toc"] > h1 {
 nav[data-type="toc"] li[data-type="chapter"], 
 nav[data-type="toc"] li[data-type="part"], 
 nav[data-type="toc"] li[data-type="appendix"] { 
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 11pt;
   line-height: 12pt;
   text-transform: uppercase;
@@ -252,13 +261,10 @@ nav[data-type="toc"] li[data-type="appendix"] {
 
 nav[data-type="toc"] li[data-type="part"] { 
   margin-top: 18pt;
-  border-bottom: 0.25pt solid cmyk(0%,0%,0%,100%);
-  padding-bottom: 4pt;
 }
 
 nav[data-type="toc"] li[data-type="part"] > a { 
   border-bottom: 0.25pt solid cmyk(0%,0%,0%,100%);
-  padding-bottom: 4pt;
   width: 100%;
   display: inline-block;
 }
@@ -284,7 +290,7 @@ nav[data-type="toc"] li[data-type="preface"] a,
 nav[data-type="toc"] li[data-type="foreword"] a, 
 nav[data-type="toc"] li[data-type="glossary"] a, 
 nav[data-type="toc"] li[data-type="index"] a {
-  font-family: 'Crimson-SemiboldItalic';
+  font-family: 'Crimson-SemiboldItalic', serif;
   font-style: italic;
 }
 
@@ -313,16 +319,16 @@ nav[data-type="toc"] li[data-type="part"] ol {
 }
 
 nav[data-type="toc"] li[data-type="chapter"] ol { 
-  font-family: 'Crimson-Roman';
+  font-family: 'Crimson-Roman', serif;
   font-size: 9pt;
   line-height: 11pt;
-  margin-left: 0.5in;
-  text-indent: -0.33in;
+  margin-left: 0.1667in;
+  text-indent: -0.1667in;
   text-transform: none;
 }
 
 nav[data-type="toc"] li[data-type="chapter"] ol ol { 
-  margin-left: 0.33in;
+  margin-left: 0.1667in;
   text-indent: -0.1667in;
   text-transform: none;
 }
@@ -362,6 +368,15 @@ nav[data-type="toc"] li[data-type="chapter"] ol ol {
   }
 }
 
+@page preface:blank { 
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+
 section[data-type="preface"] {
   page: preface;
   page-break-before: right; /* forces new chapters to start on a right hand page */
@@ -369,7 +384,7 @@ section[data-type="preface"] {
 }
 
 section[data-type="preface"] > h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 18pt;
   line-height: 22pt;
   string-set: ChapterTitle self;
@@ -385,7 +400,7 @@ div[data-type="part"] {
 }
 
 div[data-type="part"] > h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 18pt;
   line-height: 22pt;
   text-align: center;
@@ -395,7 +410,7 @@ div[data-type="part"] > h1 {
 }
 
 div[data-type="part"] > h1:before {
-  font-family: 'OpenSans-Semibold';
+  font-family: 'OpenSans-Semibold', sans-serif;
   font-size: 11pt;
   text-transform: uppercase;
   content: "Part " counter(PartNumber);
@@ -460,7 +475,7 @@ section[data-type="chapter"] {
 }
 
 section[data-type="chapter"] > h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 18pt;
   line-height: 22pt;
   string-set: ChapterTitle self;
@@ -470,7 +485,7 @@ section[data-type="chapter"] > h1 {
 }
 
 section[data-type="chapter"] > h1:before {
-  font-family: 'OpenSans-Semibold';
+  font-family: 'OpenSans-Semibold', sans-serif;
   font-size: 9pt;
   text-transform: uppercase;
   content: "Chapter " counter(ChapterNumber);
@@ -522,7 +537,7 @@ section[data-type="appendix"] {
 }
 
 section[data-type="appendix"] > h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 18pt;
   line-height: 22pt;
   string-set: ChapterTitle self;
@@ -532,7 +547,7 @@ section[data-type="appendix"] > h1 {
 }
 
 section[data-type="appendix"] > h1:before {
-  font-family: 'OpenSans-Semibold';
+  font-family: 'OpenSans-Semibold', sans-serif;
   font-size: 9pt;
   text-transform: uppercase;
   content: "Appendix " counter(AppendixNumber, upper-alpha);
@@ -545,7 +560,7 @@ section[data-type="appendix"] > h1:before {
 /* sections */
 
 section[data-type="sect1"] > h1 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 12pt;
   line-height: 14pt;
   margin-top: 18pt;
@@ -554,7 +569,7 @@ section[data-type="sect1"] > h1 {
 }
 
 section[data-type="sect2"] > h2 {
-  font-family: 'OpenSans-Bold';
+  font-family: 'OpenSans-Bold', sans-serif;
   font-size: 8.5pt;
   line-height: 12pt;
   margin-top: 12pt;
@@ -563,7 +578,7 @@ section[data-type="sect2"] > h2 {
 }
 
 section[data-type="sect3"] > h3 {
-  font-family: 'OpenSans-Semibold';
+  font-family: 'OpenSans-Semibold', sans-serif;
   font-size: 9pt;
   line-height: 14pt;
   margin-top: 9pt;
@@ -577,7 +592,7 @@ ul, ol {
 }
 
 ul li, ol li {
-  font-family: 'Crimson-Roman';
+  font-family: 'Crimson-Roman', serif;
   font-size: 11pt;
   line-height: 14pt;
   margin-top: 3pt;
@@ -588,7 +603,7 @@ dl {
 }
 
 dt {
-  font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans-Regular', sans-serif;
   font-size: 8.5pt;
   line-height: 14pt;
   margin-top: 7pt;
@@ -610,7 +625,7 @@ table {
 }
 
 table caption {
-  font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans-Regular', sans-serif;
   font-size: 8.5pt;
   line-height: 14pt;
   text-align: left;
@@ -620,7 +635,7 @@ table caption {
 
 table caption:before {
   content: "Table " counter(ChapterNumber)"-"counter(TableNumber)". ";
-  font-family: 'OpenSans-Semibold';
+  font-family: 'OpenSans-Semibold', sans-serif;
 }
 
 th, td {
@@ -628,7 +643,7 @@ th, td {
 }
 
 th {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 8pt;
   line-height: 10pt;
   text-align: left;
@@ -638,13 +653,13 @@ th {
 }
 
 td {
-  font-family: 'OpenSans-CondLight';
+  font-family: 'OpenSans-CondLight', sans-serif;
   font-size: 9pt;
   line-height: 10pt;
 }
 
 table p {
-  font-family: 'OpenSans-CondLight';
+  font-family: 'OpenSans-CondLight', sans-serif;
   font-size: 9pt;
   line-height: 10pt;
   text-indent: 0;
@@ -666,7 +681,7 @@ figure {
 }
 
 figcaption {
-  font-family: 'OpenSans-Reguar';
+  font-family: 'OpenSans-Reguar', sans-serif;
   font-size: 8.5pt;
   line-height: 11pt;
   border-top: 0.5pt solid cmyk(0%,0%,0%,100%);
@@ -676,7 +691,7 @@ figcaption {
 }
 
 figcaption:before {
-  font-family: 'OpenSans-Semibold';
+  font-family: 'OpenSans-Semibold', sans-serif;
   counter-increment: FigureNumber;
   content: "Figure " counter(ChapterNumber) "-" counter(FigureNumber) ". ";
 }
@@ -695,7 +710,7 @@ aside {
 }
 
 aside h5 {
-  font-family: 'OpenSans-CondBold';
+  font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 11pt;
   line-height: 13pt;
   text-align: center;
@@ -704,7 +719,7 @@ aside h5 {
 }
 
 aside h6 {
-  font-family: 'Crimson-Bold';
+  font-family: 'Crimson-Bold', serif;
   font-size: 9.5pt;
   line-height: 12pt;
 }
@@ -729,7 +744,7 @@ div[data-type="warning"] {
 
 div[data-type="note"] h1, 
 div[data-type="warning"] h1 {
-  font-family: 'OpenSans-ExtraBold';
+  font-family: 'OpenSans-ExtraBold', sans-serif;
   font-size: 7pt;
   text-transform: uppercase;
   text-align: center;
@@ -739,7 +754,7 @@ div[data-type="warning"] h1 {
 
 div[data-type="note"] p, 
 div[data-type="warning"] p {
-  font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans-Regular', sans-serif;
   font-size: 8pt;
   line-height: 11pt;
   text-indent: 0in;
@@ -777,7 +792,7 @@ table code {
 /* blockquote */
 
 blockquote {
-  font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans-Regular', sans-serif;
   font-size: 7.5pt;
   line-height: 11pt;
   margin-left: 0.1667in;
