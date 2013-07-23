@@ -175,7 +175,32 @@ section[data-type="titlepage"] div.locations {
 
 section[data-type="copyright-page"] {
   page: blank;
+  float: bottom;
   page-break-after: always;
+}
+
+section[data-type="copyright-page"] h1 {
+  font-family: 'OpenSans-CondBold', sans-serif;
+  font-size: 10pt;
+}
+
+section[data-type="copyright-page"] p {
+  font-family: 'Crimson-Roman', serif;
+  font-size: 10pt;
+  margin: 6pt 0 6pt 0;
+  text-indent: 0;
+}
+
+section[data-type="copyright-page"] div.author {
+  margin: 0 0 18pt 0;
+}
+
+section[data-type="copyright-page"] div.author p {
+  margin: 0;
+}
+
+section[data-type="copyright-page"] p.isbn {
+  margin: 24pt 0;
 }
 
 section[data-type="dedication"] {
@@ -305,11 +330,22 @@ nav[data-type="toc"] li {
 
 nav[data-type="toc"] li[data-type="preface"] a:after, 
 nav[data-type="toc"] li[data-type="forward"] a:after {
+  font-family: 'Crimson-Semibold', serif;
+  font-style: normal;
   content: leader(" ") target-counter(attr(href, url), page, lower-roman);
 }
 
-nav[data-type="toc"] li[data-type="chapter"] a:after, 
-nav[data-type="toc"] li[data-type="appendix"] a:after {
+nav[data-type="toc"] li[data-type="chapter"] > a:after, 
+nav[data-type="toc"] li[data-type="appendix"] > a:after {
+  font-family: 'OpenSans-CondBold', sans-serif;
+  font-size: 11pt;
+  content: leader(" ") target-counter(attr(href, url), page, decimal);
+}
+
+nav[data-type="toc"] li[data-type="chapter"] li a:after, 
+nav[data-type="toc"] li[data-type="appendix"] li a:after {
+  font-family: 'Crimson-Roman', serif;
+  font-size: 9pt;
   content: leader(" ") target-counter(attr(href, url), page, decimal);
 }
 
@@ -322,7 +358,7 @@ nav[data-type="toc"] li[data-type="chapter"] ol {
   font-family: 'Crimson-Roman', serif;
   font-size: 9pt;
   line-height: 11pt;
-  margin-left: 0.1667in;
+  margin-left: 0.33in;
   text-indent: -0.1667in;
   text-transform: none;
 }
