@@ -215,7 +215,6 @@ section[data-type="dedication"] {
 /* table of contents */
 
 @page toc:first {
-  padding-top: ;
   @bottom-right {
     text-align: right;
     content: counter(page, lower-roman);
@@ -372,7 +371,6 @@ nav[data-type="toc"] li[data-type="chapter"] ol ol {
 /* prefaces */
 
 @page preface:first {
-  padding-top: ;
   @bottom-right {
     text-align: right;
     content: counter(page, lower-roman);
@@ -459,7 +457,6 @@ div[data-type="part"] > h1:before {
 /* chapters */
 
 @page chapter:first {
-  padding-top: ;
   @bottom-right {
     text-align: right;
     content: counter(page);
@@ -534,7 +531,6 @@ section[data-type="chapter"] > h1:before {
 /* appendixes */
 
 @page appendix:first {
-  padding-top: ;
   @bottom-right {
     text-align: right;
     content: counter(page);
