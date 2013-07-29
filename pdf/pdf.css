@@ -584,12 +584,12 @@ section[data-type="chapter"] {
 section[data-type="appendix"] {
   page: appendix;
   page-break-before: right; /* forces new chapters to start on a right hand page */
-  counter-reset: TableNumber footnote;
+  counter-reset: FigureNumber TableNumber footnote;
 }
 
 /* lists */
 
-ul, ol {
+ul, ol { /* bulleted and numbered lists */
   margin: 7pt 0 7pt .33in;
 }
 
@@ -600,18 +600,18 @@ ul li, ol li {
   margin-top: 3pt;
 }
 
-dl {
+dl { /* definition lists */
   margin-bottom: 7pt;
 }
 
-dt {
+dt { /* definition list terms */
   font-family: 'OpenSans-Regular', sans-serif;
   font-size: 8.5pt;
   line-height: 14pt;
   margin-top: 7pt;
 }
 
-dd {
+dd { /* definition list descriptions */
   text-indent: 0;
   margin-left: 0.1667in;
 }
@@ -621,9 +621,8 @@ dd {
 table {
   margin-top: 22pt;
   margin-bottom: 22pt;
-  counter-increment: TableNumber;
   border-bottom: .5pt solid cmyk(0%,0%,0%,100%);
-  border-collapse:collapse;
+  border-collapse: collapse;
 }
 
 table caption {
@@ -635,16 +634,17 @@ table caption {
   padding: 0;
 }
 
-table caption:before {
+table caption:before { /* table captions are auto-numbered via the following */
+  counter-increment: TableNumber;
   content: "Table " counter(ChapterNumber)"-"counter(TableNumber)". ";
   font-family: 'OpenSans-Semibold', sans-serif;
 }
 
-th, td {
-  padding: 4.5pt 0.0625in 4.5pt 0.0625in;
+tr {
+  border-width: 0px;
 }
 
-th {
+th { /* table heading rows */
   font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 8pt;
   line-height: 10pt;
@@ -654,28 +654,29 @@ th {
   border-bottom: 0.5pt solid cmyk(0%,0%,0%,100%);
 }
 
-td {
+th, td {
+  padding: 4.5pt 0.0625in 4.5pt 0.0625in;
+}
+
+td, table p { /* table body text */
   font-family: 'OpenSans-CondLight', sans-serif;
   font-size: 9pt;
   line-height: 10pt;
 }
 
-table p {
-  font-family: 'OpenSans-CondLight', sans-serif;
-  font-size: 9pt;
-  line-height: 10pt;
+table p { /* table body text */
   text-indent: 0;
   margin-top: 4pt;
 }
 
-td pre.programlisting, td pre.screen, td pre.literallayout, td code {
+td pre.programlisting, td pre.screen, td pre.literallayout, td code { /* allow code in tables to wrap */
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
 /* figures */
 
-figure {
+figure { /* figure containers */
   margin-top: 13pt;
   margin-bottom: 16pt;
   padding: 0;
@@ -683,7 +684,12 @@ figure {
   page-break-inside: avoid;
 }
 
-figcaption {
+figure img { /* figure images */
+  max-width: 100%;
+  margin: 0;
+}
+
+figcaption { /* figure captions */
   font-family: 'OpenSans-Reguar', sans-serif;
   font-size: 8.5pt;
   line-height: 11pt;
@@ -693,26 +699,21 @@ figcaption {
   display: block;
 }
 
-figcaption:before {
+figcaption:before { /* figure captions are auto-numbered via the following */
   font-family: 'OpenSans-Semibold', sans-serif;
   counter-increment: FigureNumber;
   content: "Figure " counter(ChapterNumber) "-" counter(FigureNumber) ". ";
 }
 
-figure img {
-  max-width: 100%;
-  margin: 0;
-}
-
 /* sidebars */
 
-aside {
+aside { /* sidebar containers */
   border: 0.5pt solid cmyk(0%,0%,0%,100%);
   padding: 18pt 0.1667in 12pt 0.1667in;
   margin: 14pt 0 14pt 0;
 }
 
-aside h5 {
+aside h5 { /* sidebar titles */
   font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 11pt;
   line-height: 13pt;
@@ -721,13 +722,13 @@ aside h5 {
   padding: 0;
 }
 
-aside h6 {
+aside h6 { /* sidebar subtitles */
   font-family: 'Crimson-Bold', serif;
   font-size: 9.5pt;
   line-height: 12pt;
 }
 
-aside p {
+aside p { /* sidebar text */
   font-size: 9.5pt;
   line-height: 12pt;
   text-indent: 0;
@@ -737,16 +738,16 @@ aside p {
 /* admonitions */
 
 div[data-type="note"], 
-div[data-type="warning"] {
+div[data-type="warning"] { /* admonition containers */
   border-top: .5pt solid cmyk(0%,0%,0%,100%);
   border-bottom: .5pt solid cmyk(0%,0%,0%,100%);
   padding: 7pt 0 7pt 0;
   margin: 16.5pt .33in 10pt .33in;
-  page-break-inside: avoid;
+  page-break-inside: avoid; /* avoid breaking admonitions across pages */
 }
 
 div[data-type="note"] h1, 
-div[data-type="warning"] h1 {
+div[data-type="warning"] h1 { /* admonition titles */
   font-family: 'OpenSans-ExtraBold', sans-serif;
   font-size: 7pt;
   text-transform: uppercase;
@@ -756,7 +757,7 @@ div[data-type="warning"] h1 {
 }
 
 div[data-type="note"] p, 
-div[data-type="warning"] p {
+div[data-type="warning"] p { /* admonition text */
   font-family: 'OpenSans-Regular', sans-serif;
   font-size: 8pt;
   line-height: 11pt;
@@ -765,29 +766,29 @@ div[data-type="warning"] p {
 
 /* code */
 
-pre, code {
+pre, code { /* monospace font for both code blocks and inline code */
   font-family: 'UbuntuMono-Regular', monospace;
 }
 
-pre {
+pre { /* code blocks */
   font-size: 9pt;
   line-height: 11pt;
   margin: 7pt 0 7pt 0.1667in;
 }
 
-code {
+code { /* inline code */
   font-size: 9.5pt;
   line-height: 14pt;
 }
 
-table pre {
+table pre { /* code blocks within tables */
   text-indent: 0;
 }
 
 div[data-type="note"] code, 
 div[data-type="warning"] code, 
 aside code, 
-table code {
+table code { /* inline code within notes, sidebars and tables */
   font-size: inherit;
   line-height: inherit;
 }
