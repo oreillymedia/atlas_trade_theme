@@ -78,6 +78,11 @@ nav[data-type="toc"] > h1 {
   bookmark-state: closed;
 }
 
+div[data-type="part"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
 section[data-type="preface"] > h1 {
   bookmark-level: 1;
   bookmark-state: closed;
@@ -94,7 +99,7 @@ section[data-type="appendix"] > h1 {
 }
 
 section[data-type="sect1"] > h1 {
-  bookmark-level: 1;
+  bookmark-level: 2;
   bookmark-state: closed;
 }
 
