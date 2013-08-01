@@ -113,6 +113,13 @@ body[data-type="book"] {
   counter-reset: page 1 PartNumber ChapterNumber AppendixNumber FigureNumber TableNumber footnote;
 }
 
+/* page number resets to 1 on either first chapter or first part */
+
+body > div[data-type="part"]:first-of-type, 
+body > section[data-type="chapter"]:first-of-type {
+  counter-reset: page 1;
+}
+
 /* frontmatter */
 
 section[data-type="halftitlepage"], 
@@ -576,12 +583,6 @@ div[data-type="part"] > h1:before {
   @bottom-right {
     content: none;
   }
-}
-
-/* page number resets to 1 on the first chapter */
-
-section[data-type="chapter"]:first-of-type {
-  counter-reset: page 1;
 }
 
 section[data-type="chapter"] {
