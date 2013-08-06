@@ -173,7 +173,7 @@ section[data-type="titlepage"] p {
 
 /* styling and positioning for author names */
 
-section[data-type="titlepage"] div.author {
+section[data-type="titlepage"] p.author:first-of-type {
   margin-top: 82pt;
 }
 
