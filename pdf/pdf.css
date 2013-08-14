@@ -722,24 +722,23 @@ figure img { /* figure images */
   margin: 0;
 }
 
-figure figcaption:first-child { /* figure captions */
+figure figcaption { /* figure captions */
   font-family: 'OpenSans-Reguar', sans-serif;
   font-size: 8.5pt;
   line-height: 11pt;
-  border-bottom: 0.5pt solid cmyk(0%,0%,0%,100%);
-  padding-bottom: 4pt;
-  margin-bottom: 4pt;
   display: block;
 }
 
-figcaption { /* figure captions */
-  font-family: 'OpenSans-Reguar', sans-serif;
-  font-size: 8.5pt;
-  line-height: 11pt;
+figure figcaption:first-child { /* figure captions before image */
+  border-bottom: 0.5pt solid cmyk(0%,0%,0%,100%);
+  padding-bottom: 4pt;
+  margin-bottom: 4pt;
+}
+
+figure img + figcaption { /* figure captions after image */
   border-top: 0.5pt solid cmyk(0%,0%,0%,100%);
   padding-top: 4pt;
   margin-top: 0pt;
-  display: block;
 }
 
 figcaption:before { /* figure captions are auto-numbered via the following */
