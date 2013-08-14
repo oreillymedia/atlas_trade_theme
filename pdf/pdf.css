@@ -3,7 +3,7 @@
 @page { /* defining overall trim size and page layout */
   size: 5.5in 8.5in; /* width, heigth */
   margin: 54pt 0.75in 54pt 0.75in; /* white space around the page */
-  @bottom-left { /* footer area */
+  @bottom-left { /* left footer area */
     font-family: 'OpenSans-Regular', sans-serif;
     font-size: 8pt;
     text-align: left;
@@ -11,7 +11,7 @@
     margin-top: 0;
     vertical-align: top;
   }
-  @bottom-right { /* footer area */
+  @bottom-right { /* right footer area */
     font-family: 'OpenSans-Regular', sans-serif;
     font-size: 8pt;
     text-align: right;
@@ -21,7 +21,7 @@
   }
 }
 
-@page :blank { /* defining a truly blank master page */
+@page :blank { /* blank pages should not have anything in the footer */
   @bottom-left {
 	  content: none;
 	}
@@ -30,7 +30,7 @@
 	}
 }
 
-/* general blocks */
+/* ------------------- GENERAL BLOCKS ------------------- */
 
 section[data-type="preface"] > h1 + p, 
 div[data-type="part"] > h1 + p, 
@@ -49,21 +49,23 @@ p, dd { /* general text styles */
   line-height: 14pt;
 }
 
-/* global styles */
+/* ------------------- GLOBAL STYLES ------------------- */
 
-div[data-type="book"] {
+div[data-type="book"] { /* defining hyphenation rules */
   hyphens: auto;
   -ah-hyphenate-hyphenated-word: false;
   -ah-kerning-mode: pair;
 }
 
-/* general inlines */
+/* ------------------- GENERAL INLINES ------------------- */
 
 a {
   font-style: italic; /* links are italicized */
 }
 
-/* PDF bookmarks */
+/* ------------------- PDF BOOKMARKS ------------------- */
+
+/* bookmark labels will be included for the headings listed below */
 
 nav[data-type="toc"] > h1 {
   bookmark-level: 1;
@@ -95,7 +97,7 @@ section[data-type="sect1"] > h1 {
   bookmark-state: closed;
 }
 
-/* reset counters */
+/* ------------------- COUNTER RESET ------------------- */
 
 /* counters add auto-numbering to elements in the book. 
    This reset initiates the counters, enabling them 
@@ -105,14 +107,14 @@ body[data-type="book"] {
   counter-reset: page 1 PartNumber ChapterNumber AppendixNumber FigureNumber TableNumber footnote;
 }
 
-/* page number resets to 1 on either first chapter or first part */
+/* page number resets to 1 on either first chapter or first part, which ever comes first */
 
 body > div[data-type="part"]:first-of-type, 
 body > section[data-type="chapter"]:first-of-type {
   counter-reset: page 1;
 }
 
-/* frontmatter */
+/* ------------------- FRONTMATTER ------------------- */
 
 section[data-type="halftitlepage"], 
 section[data-type="titlepage"] {
@@ -121,6 +123,8 @@ section[data-type="titlepage"] {
   page-break-before: right; /* titlepages always start on a right-hand page */
   page-break-after: always;
 }
+
+/* titlepage headings (i.e., your book title) */
 
 section[data-type="halftitlepage"] h1, 
 section[data-type="titlepage"] h1 {
@@ -140,7 +144,7 @@ section[data-type="titlepage"] h1 {
   line-height: 24pt;
 }
 
-section[data-type="titlepage"] h2 {
+section[data-type="titlepage"] h2 { /* book subtitle */
   font-family: 'OpenSans-SemiboldItalic', sans-serif;
   font-size: 12pt;
   line-height: 15pt;
@@ -180,12 +184,12 @@ section[data-type="titlepage"] p.author {
 /* copyright page */
 
 section[data-type="copyright-page"] {
-  page: blank;
+  page: blank; 
   float: bottom;
   page-break-after: always;
 }
 
-section[data-type="copyright-page"] h1 {
+section[data-type="copyright-page"] h1 { /* book title */
   font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 10pt;
 }
@@ -220,7 +224,7 @@ section[data-type="dedication"] {
   padding-top: 96pt;
 }
 
-/* table of contents */
+/* ------------------- TABLE Of CONTENTS ------------------- */
 
 @page toc:first {
   @bottom-right {
@@ -258,7 +262,7 @@ section[data-type="dedication"] {
   }
 }
 
-/* adding page numbers to the table of contents */
+/* adding leaders and target page numbers to the table of contents */
 
 nav[data-type="toc"] li[data-type="preface"] a:after, 
 nav[data-type="toc"] li[data-type="forward"] a:after {
@@ -329,7 +333,7 @@ nav[data-type="toc"] li[data-type="appendix"] {
   text-indent: 0;
 }
 
-/* entries for parts in the table of contents */
+/* entries in the table of contents for parts */
 
 nav[data-type="toc"] li[data-type="part"] { 
   margin-top: 18pt;
@@ -346,7 +350,7 @@ nav[data-type="toc"] li[data-type="part"] ol {
   text-indent: 0;
 }
 
-/* entries for chapters and appendixes in the table of contents */
+/* entries in the table of contents for chapters and appendixes */
 
 nav[data-type="toc"] li[data-type="chapter"] { 
   margin-top: 12pt;
@@ -362,7 +366,7 @@ nav[data-type="toc"] li[data-type="appendix"] > a:after { /* chapter/appendix pa
   font-size: 11pt;
 }
 
-/* entries for sub-sections */
+/* entries in the table of contents for sub-sections */
 
 nav[data-type="toc"] li[data-type="chapter"] ol { 
   font-size: 9pt;
@@ -383,7 +387,7 @@ nav[data-type="toc"] li[data-type="appendix"] li a:after { /* sub-section page n
   font-size: 9pt;
 }
 
-/* front and backmatter in the table of contents */
+/* entries in the table of contents for front and backmatter */
 
 nav[data-type="toc"] li[data-type="preface"], 
 nav[data-type="toc"] li[data-type="foreword"], 
@@ -398,9 +402,10 @@ nav[data-type="toc"] li[data-type="foreword"] ol {
   display: none;
 }
 
+/* ------------------- HEADINGS ------------------- */
+
 /* preface, chapter, and appendix headings */
 
-/* shared styles for all chapter-level headings */
 section[data-type="preface"] > h1, 
 section[data-type="chapter"] > h1, 
 section[data-type="appendix"] > h1 {
@@ -425,7 +430,7 @@ section[data-type="appendix"] > h1 {
   counter-increment: AppendixNumber;
 }
 
-/* chapter and appendix headings include auto-numbering */
+/* chapter and appendix headings include auto-numbered labels */
 section[data-type="chapter"] > h1:before, 
 section[data-type="appendix"] > h1:before {
   font-family: 'OpenSans-Semibold', sans-serif;
@@ -473,7 +478,7 @@ section[data-type="sect3"] > h3 { /* C-level headings */
   margin-bottom: 3pt;
 }
 
-/* prefaces */
+/* ------------------- PREFACES ------------------- */
 
 @page preface:first {
   @bottom-left {
@@ -514,7 +519,7 @@ section[data-type="preface"] {
   counter-reset: FigureNumber TableNumber footnote; /* setting auto-numbers for figures, tables, and footnotes to start at 1 */
 }
 
-/* parts */
+/* ------------------- PARTS ------------------- */
 
 div[data-type="part"] {
   page: blank;
@@ -542,7 +547,7 @@ div[data-type="part"] > h1:before {
   margin-bottom: 34pt;
 }
 
-/* chapters */
+/* ------------------- CHAPTERS ------------------- */
 
 @page chapter:first {
   @bottom-left {
@@ -583,7 +588,7 @@ section[data-type="chapter"] {
   counter-reset: TableNumber FigureNumber footnote;
 }
 
-/* appendixes */
+/* ------------------- APPENDIXES ------------------- */
 
 @page appendix:first {
   @bottom-left {
@@ -615,7 +620,7 @@ section[data-type="appendix"] {
   counter-reset: FigureNumber TableNumber footnote;
 }
 
-/* lists */
+/* ------------------- LISTS ------------------- */
 
 ul, ol { /* bulleted and numbered lists */
   margin: 7pt 0 7pt .33in;
@@ -644,7 +649,7 @@ dd { /* definition list descriptions */
   margin-left: 0.1667in;
 }
 
-/* tables */
+/* ------------------- TABLES ------------------- */
 
 table {
   margin-top: 22pt;
@@ -702,7 +707,7 @@ td pre.programlisting, td pre.screen, td pre.literallayout, td code { /* allow c
   word-wrap: break-word;
 }
 
-/* figures */
+/* ------------------- FIGURES ------------------- */
 
 figure { /* figure containers */
   margin-top: 13pt;
@@ -743,7 +748,7 @@ figcaption:before { /* figure captions are auto-numbered via the following */
   content: "Figure " counter(ChapterNumber) "-" counter(FigureNumber) ". ";
 }
 
-/* sidebars */
+/* ------------------- SIDEBARS ------------------- */
 
 aside { /* sidebar containers */
   border: 0.5pt solid cmyk(0%,0%,0%,100%);
@@ -773,7 +778,7 @@ aside p { /* sidebar text */
   margin-top: 4pt;
 }
 
-/* admonitions */
+/* ------------------- ADMONITIONS ------------------- */
 
 div[data-type="note"], 
 div[data-type="warning"] { /* admonition containers */
@@ -802,7 +807,7 @@ div[data-type="warning"] p { /* admonition text */
   text-indent: 0in;
 }
 
-/* code */
+/* ------------------- CODE ------------------- */
 
 pre, code { /* monospace font for both code blocks and inline code */
   font-family: 'UbuntuMono-Regular', monospace;
@@ -846,7 +851,7 @@ div[data-type="example"] h5:before { /* figure captions are auto-numbered via th
   content: "Example " counter(ChapterNumber) "-" counter(ExampleNumber) ". ";
 }
 
-/* blockquote */
+/* ------------------- BLOCKQUOTES ------------------- */
 
 blockquote {
   font-family: 'OpenSans-Regular', sans-serif;
