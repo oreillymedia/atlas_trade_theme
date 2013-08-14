@@ -21,14 +21,6 @@
   }
 }
 
-@page :left {
-
-}
-
-@page :right {
-
-}
-
 @page :blank { /* defining a truly blank master page */
   @bottom-left {
 	  content: none;
