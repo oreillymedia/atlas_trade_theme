@@ -1,12 +1,7 @@
-@font-face {
-  font-family: "Crimson";
-  src: url("http://orm-social-book-dev.s3.amazonaws.com/templates/rune/Gotham-Book.ttf");
-}
-
 /* general blocks */
 
 p, dd { /* general text styles */
-  font-family: 'Crimson-Roman', serif;
+  font-family: serif;
   text-indent: 20px;
   font-size: 1em;
   line-height: 125%;
@@ -61,7 +56,7 @@ section[data-type="titlepage"] {
 }
 
 section[data-type="titlepage"] h1 {
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
   border-bottom: 1px solid #d8d8d8;
   margin-top: 100px;
   padding-bottom: 10px;
@@ -73,7 +68,7 @@ section[data-type="titlepage"] h1 {
 }
 
 section[data-type="titlepage"] h2 {
-  font-family: 'OpenSans-SemiboldItalic', sans-serif;
+  font-family: sans-serif;
   font-size: 1.2em;
   line-height: 120%;
   margin-top: 20px;
@@ -83,7 +78,7 @@ section[data-type="titlepage"] h2 {
 
 section[data-type="titlepage"] p.author, 
 section[data-type="titlepage"] p {
-  font-family: 'Crimson-Roman', serif;
+  font-family: serif;
 }
 
 /* all information other than title, subtitle, and author floats to the bottom */
@@ -114,12 +109,12 @@ section[data-type="copyright-page"] {
 }
 
 section[data-type="copyright-page"] h1 {
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
 }
 
 section[data-type="copyright-page"] p {
-  font-family: 'Crimson-Roman', serif;
+  font-family: serif;
   font-size: 0.8em;
   margin: 0;
   text-indent: 0;
@@ -140,7 +135,7 @@ section[data-type="copyright-page"] p.isbn {
 /* dedication */
 
 section[data-type="dedication"] {
-  font-family: 'Crimson-Italic', serif;
+  font-family: serif;
   font-style: italic;
   page-break-after: always;
   text-align: center;
@@ -182,21 +177,21 @@ nav[data-type="toc"] li[data-type="part"],
 nav[data-type="toc"] li[data-type="appendix"], 
 nav[data-type="toc"] li[data-type="chapter"] > a:after, 
 nav[data-type="toc"] li[data-type="appendix"] > a:after {
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
 }
 
 nav[data-type="toc"] li[data-type="preface"] a, 
 nav[data-type="toc"] li[data-type="foreword"] a, 
 nav[data-type="toc"] li[data-type="glossary"] a, 
 nav[data-type="toc"] li[data-type="index"] a {
-  font-family: 'Crimson-SemiboldItalic', serif;
+  font-family: serif;
   font-style: italic;
 }
 
 nav[data-type="toc"] li[data-type="chapter"] li a:after, 
 nav[data-type="toc"] li[data-type="appendix"] li a:after, 
 nav[data-type="toc"] li[data-type="chapter"] ol {
-  font-family: 'Crimson-Roman', serif;
+  font-family: serif;
 }
 
 nav[data-type="toc"] li[data-type="chapter"], 
@@ -284,7 +279,7 @@ nav[data-type="toc"] li[data-type="foreword"] ol {
 section[data-type="preface"] > h1, 
 section[data-type="chapter"] > h1, 
 section[data-type="appendix"] > h1 {
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
   font-size: 1.8em;
   line-height: 120%;
   margin-top: 70px;
@@ -295,7 +290,7 @@ section[data-type="appendix"] > h1 {
 /* section headings */
 
 section[data-type="sect1"] h1 { /* A-level headings */
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
   font-size: 1.5em;
   line-height: 120%;
   margin-top: 40px;
@@ -303,7 +298,7 @@ section[data-type="sect1"] h1 { /* A-level headings */
 }
 
 section[data-type="sect2"] h2 { /* B-level headings */
-  font-family: 'OpenSans-Bold', sans-serif;
+  font-family: sans-serif;
   font-size: 1.1em;
   line-height: 120%;
   margin-top: 30px;
@@ -312,7 +307,7 @@ section[data-type="sect2"] h2 { /* B-level headings */
 }
 
 section[data-type="sect3"] h3 { /* C-level headings */
-  font-family: 'OpenSans-Semibold', sans-serif;
+  font-family: sans-serif;
   font-size: 1.1em;
   line-height: 120%;
   margin-top: 20px;
@@ -332,7 +327,7 @@ div[data-type="part"] {
 }
 
 div[data-type="part"] > h1 {
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
   font-size: 1.8em;
   line-height: 120%;
   text-align: center;
@@ -360,7 +355,7 @@ ul, ol { /* bulleted and numbered lists */
 
 ul li, ol li, 
 ul li p, ol li p {
-  font-family: 'Crimson-Roman', serif;
+  font-family: serif;
   font-size: 1em;
   line-height: 120%;
   margin-top: 5px;
@@ -372,7 +367,7 @@ dl { /* definition lists */
 }
 
 dt { /* definition list terms */
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: sans-serif;
   font-size: 0.9em;
   line-height: 120%;
   margin-top: 15px;
@@ -398,7 +393,7 @@ table {
 }
 
 table caption {
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   line-height: 120%;
   text-align: left;
@@ -411,7 +406,7 @@ tr {
 }
 
 th { /* table heading rows */
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   line-height: 120%;
   text-align: left;
@@ -425,7 +420,7 @@ th, td {
 }
 
 td, table p { /* table body text */
-  font-family: 'OpenSans-CondLight', sans-serif;
+  font-family: sans-serif;
   font-size: 12px;
   line-height: 120%;
 }
@@ -456,7 +451,7 @@ figure img { /* figure images */
 }
 
 figure figcaption:first-child { /* figure captions */
-  font-family: 'OpenSans-Reguar', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   line-height: 120%;
   border-bottom: 1px solid #d8d8d8;
@@ -466,7 +461,7 @@ figure figcaption:first-child { /* figure captions */
 }
 
 figure img + figcaption { /* figure captions */
-  font-family: 'OpenSans-Reguar', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   line-height: 120%;
   border-top: 1px solid #d8d8d8;
@@ -484,7 +479,7 @@ aside { /* sidebar containers */
 }
 
 aside h5 { /* sidebar titles */
-  font-family: 'OpenSans-CondBold', sans-serif;
+  font-family: sans-serif;
   font-size: 1em;
   line-height: 120%;
   text-align: center;
@@ -493,7 +488,7 @@ aside h5 { /* sidebar titles */
 }
 
 aside h6 { /* sidebar subtitles */
-  font-family: 'Crimson-Bold', serif;
+  font-family: serif;
   font-weight: bold;
   font-size: 0.9em;
   line-height: 120%;
@@ -510,7 +505,6 @@ aside p { /* sidebar text */
 
 div[data-type="note"], 
 div[data-type="warning"] { /* admonition containers */
-  /*background-color: #f7f7f7;*/
   border-top: 1px solid #d8d8d8;
   border-bottom: 1px solid #d8d8d8;
   padding: 10px 0;
@@ -520,7 +514,7 @@ div[data-type="warning"] { /* admonition containers */
 
 div[data-type="note"] h1, 
 div[data-type="warning"] h1 { /* admonition titles */
-  font-family: 'OpenSans-ExtraBold', sans-serif;
+  font-family: sans-serif;
   font-weight: bold;
   font-size: 0.8em;
   text-transform: uppercase;
@@ -531,7 +525,7 @@ div[data-type="warning"] h1 { /* admonition titles */
 
 div[data-type="note"] p, 
 div[data-type="warning"] p { /* admonition text */
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   line-height: 120%;
   text-indent: 0in;
@@ -540,7 +534,7 @@ div[data-type="warning"] p { /* admonition text */
 /* code */
 
 pre, code { /* monospace font for both code blocks and inline code */
-  font-family: 'UbuntuMono-Regular', monospace;
+  font-family: monospace;
 }
 
 pre { /* code blocks */
@@ -567,7 +561,7 @@ table code { /* inline code within notes, sidebars and tables */
 }
 
 div[data-type="example"] h5 { /* titles for formal code examples */
-  font-family: 'OpenSans-Reguar', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   line-height: 120%;
   border-bottom: 1px solid #d8d8d8;
@@ -578,7 +572,7 @@ div[data-type="example"] h5 { /* titles for formal code examples */
 /* blockquote */
 
 blockquote {
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   line-height: 130%;
   margin-left: 30px;
