@@ -1,4 +1,15 @@
-/* Styles for EPUB and KF8 */
+/* Differences between PDF and ebook styles:
+   * Removed references to custom font faces
+   * Removed strings and auto-generated text
+   * Centered titlepage information
+   * Lightened box and border color to gray
+*/
+
+/* Atlas_Trade_Theme does not use any custom fonts 
+   within the EPUB or MOBI files. Instead, it relies 
+   on the system serif and sans-serif fonts installed 
+   on the device used to read the file. 
+*/
 
 /* general blocks */
 
@@ -19,34 +30,19 @@ section[data-type="sect3"] > h3 + p {
   text-indent: 0px; /* first paragraph following a heading has no indent */
 }
 
-/* global styles */
-
-div[data-type="book"] {
-  hyphens: auto;
-  -ah-hyphenate-hyphenated-word: false;
-  -ah-kerning-mode: pair;
-}
-
 /* general inlines */
 
 p a {
   display: inline;
 }
 
-/*a {
-  font-style: italic; 
-}*/
-
-
-
-/* page number resets to 1 on either first chapter or first part */
-
-body > div[data-type="part"]:first-of-type, 
-body > section[data-type="chapter"]:first-of-type {
-  counter-reset: page 1;
-}
-
 /* frontmatter */
+
+section[data-type="titlepage"] h1, 
+section[data-type="titlepage"] h2, 
+section[data-type="copyright-page"] h1 {
+  font-family: sans-serif;
+}
 
 section[data-type="halftitlepage"] {
   display: none;
@@ -58,7 +54,6 @@ section[data-type="titlepage"] {
 }
 
 section[data-type="titlepage"] h1 {
-  font-family: sans-serif;
   border-bottom: 1px solid #d8d8d8;
   margin-top: 100px;
   padding-bottom: 10px;
@@ -70,7 +65,6 @@ section[data-type="titlepage"] h1 {
 }
 
 section[data-type="titlepage"] h2 {
-  font-family: sans-serif;
   font-size: 1.2em;
   line-height: 120%;
   margin-top: 20px;
@@ -111,7 +105,6 @@ section[data-type="copyright-page"] {
 }
 
 section[data-type="copyright-page"] h1 {
-  font-family: sans-serif;
   font-size: 0.8em;
 }
 
@@ -147,9 +140,7 @@ section[data-type="dedication"] {
 /* table of contents */
 
 /* global styles for the table of contents */
-
-nav[data-type="toc"] { /* table of contents is a series of nested lists in a nav element */
-}
+/* table of contents is a series of nested lists in a nav element */
 
 nav[data-type="toc"] a { /* all table of contents entries are also links */
   font-style: normal;
@@ -234,11 +225,6 @@ nav[data-type="toc"] li[data-type="appendix"] {
   margin-bottom: 20px;
 }
 
-nav[data-type="toc"] li[data-type="chapter"] > a:after, 
-nav[data-type="toc"] li[data-type="appendix"] > a:after { /* chapter/appendix page numbers */
-  font-size: 1em;
-}
-
 /* entries for sub-sections */
 
 nav[data-type="toc"] li[data-type="chapter"] ol { 
@@ -253,11 +239,6 @@ nav[data-type="toc"] li[data-type="chapter"] ol ol {
   margin-left: 10px;
   text-indent: -10px;
   text-transform: none;
-}
-
-nav[data-type="toc"] li[data-type="chapter"] li a:after, 
-nav[data-type="toc"] li[data-type="appendix"] li a:after { /* sub-section page numbers */
-  font-size: 1em;
 }
 
 /* front and backmatter in the table of contents */
@@ -275,15 +256,35 @@ nav[data-type="toc"] li[data-type="foreword"] ol {
   display: none;
 }
 
+/* page breaks after all chapter-level sections */
+
+section[data-type="preface"], 
+div[data-type="part"], 
+section[data-type="chapter"], 
+section[data-type="appendix"] {
+  page-break-after: always; 
+}
+
 /* preface, chapter, and appendix headings */
+
+/* heading font is sans serif */
+
+div[data-type="part"] > h1, 
+section[data-type="preface"] > h1, 
+section[data-type="chapter"] > h1, 
+section[data-type="appendix"] > h1, 
+section[data-type="sect1"] h1, 
+section[data-type="sect2"] h2, 
+section[data-type="sect3"] h3 {
+  font-family: sans-serif;
+  line-height: 120%;
+}
 
 /* shared styles for all chapter-level headings */
 section[data-type="preface"] > h1, 
 section[data-type="chapter"] > h1, 
 section[data-type="appendix"] > h1 {
-  font-family: sans-serif;
   font-size: 1.8em;
-  line-height: 120%;
   margin-top: 70px;
   margin-bottom: 40px;
   text-align: center;
@@ -292,61 +293,31 @@ section[data-type="appendix"] > h1 {
 /* section headings */
 
 section[data-type="sect1"] h1 { /* A-level headings */
-  font-family: sans-serif;
   font-size: 1.5em;
-  line-height: 120%;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
 section[data-type="sect2"] h2 { /* B-level headings */
-  font-family: sans-serif;
   font-size: 1.1em;
-  line-height: 120%;
   margin-top: 30px;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 section[data-type="sect3"] h3 { /* C-level headings */
-  font-family: sans-serif;
   font-size: 1.1em;
-  line-height: 120%;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-/* prefaces */
-
-section[data-type="preface"] {
-  page-break-after: always; 
-}
-
 /* parts */
 
-div[data-type="part"] {
-  page-break-after: always;
-}
-
 div[data-type="part"] > h1 {
-  font-family: sans-serif;
   font-size: 1.8em;
-  line-height: 120%;
   text-align: center;
   margin-top: 100px;
   margin-bottom: 70px;
-}
-
-/* chapters */
-
-section[data-type="chapter"] {
-  page-break-after: always;
-}
-
-/* appendixes */
-
-section[data-type="appendix"] {
-  page-break-after: always; 
 }
 
 /* lists */
@@ -452,24 +423,23 @@ figure img { /* figure images */
   margin: 0;
 }
 
-figure figcaption:first-child { /* figure captions */
+figcaption {
   font-family: sans-serif;
   font-size: 0.8em;
   line-height: 120%;
-  border-bottom: 1px solid #d8d8d8;
-  padding-bottom: 6px;
-  margin-bottom: 6px;
   display: block;
 }
 
-figure img + figcaption { /* figure captions */
-  font-family: sans-serif;
-  font-size: 0.8em;
-  line-height: 120%;
+figure figcaption:first-child { /* figure caption above image */
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+figure img + figcaption { /* figure caption below image */
   border-top: 1px solid #d8d8d8;
   padding-top: 6px;
   margin-top: 6px;
-  display: block;
 }
 
 /* sidebars */
