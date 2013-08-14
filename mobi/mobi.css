@@ -591,39 +591,39 @@ blockquote p {
   text-indent: 0;
 }
 
-@media amzn-kf8 {
-
-}
-
 /*Kindle Legacy Specific Styles*/
 @media amzn-mobi {
   figure caption {
     text-align: center;
     font-size: 75%;
     font-style: italic;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 h1, h2, h3, h4 {
-  margin-top: 30px;
-  margin-bottom: 15px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-dt {
+dl {
+  margin-top: 0.5em;
+}
+
+dl dt {
   display: block;
-  margin-top: 20px;
+  margin-top: 0.5em;
 }
 
 aside {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 div[data-type="note"], 
 div[data-type="warning"] {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 div[data-type="note"] h1, 
@@ -633,6 +633,6 @@ div[data-type="warning"] h1 {
 }
 
 div[data-type="example"] h5 {
-  margin-top: 20px;
+  margin-top: 1em;
 }
 }
