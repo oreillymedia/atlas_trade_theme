@@ -1,0 +1,7 @@
+{
+  "title" : "Atlas Trade Theme",
+  "creator" : "O'Reilly Media Inc.",
+  "description" : "",
+  "sample_images" : ["images/pdf1.png", "images/pdf2.png", "images/epub1.png", "images/epub2.png", "images/mobi1.png", "images/mobi2.png"],
+  "sample_files" : ["samples/trade.epub", "samples/trade.mobi", "samples/trade.pdf"]
+}
