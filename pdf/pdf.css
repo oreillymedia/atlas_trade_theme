@@ -739,6 +739,7 @@ figcaption:before { /* figure captions are auto-numbered via the following */
 
 figure.cover {
   margin: 0;
+  counter-reset: page -1;
 }
 
 figure.cover img {
