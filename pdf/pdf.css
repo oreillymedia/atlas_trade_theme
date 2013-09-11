@@ -109,8 +109,8 @@ body[data-type="book"] {
 
 /* page number resets to 1 on either first chapter or first part, which ever comes first */
 
-body > div[data-type="part"]:first-of-type, 
-body > section[data-type="chapter"]:first-of-type {
+div[data-type="part"]:first-of-type, 
+section[data-type="chapter"]:first-of-type {
   counter-reset: page 1;
 }
 
@@ -830,7 +830,7 @@ blockquote, blockquote[data-type="epigraph"] {
   font-family: 'OpenSans-Regular', sans-serif;
   font-size: 7.5pt;
   line-height: 11pt;
-  margin: 10pt 0pt 10pt 0.1667in;
+  margin: 10pt 0.1667in 10pt 0.1667in;
 }
 
 blockquote p {
