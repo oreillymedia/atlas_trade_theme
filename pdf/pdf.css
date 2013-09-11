@@ -835,6 +835,9 @@ blockquote, blockquote[data-type="epigraph"] {
 
 blockquote p {
   text-indent: 0;
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-size: 7.5pt;
+  line-height: 11pt;
 }
 
 blockquote p[data-type="attribution"] {
