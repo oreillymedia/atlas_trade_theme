@@ -110,7 +110,10 @@ body[data-type="book"] {
 /* page number resets to 1 on either first chapter or first part, which ever comes first */
 
 body[data-type="book"] > div[data-type="part"]:first-of-type, 
-body[data-type="book"] > section[data-type="chapter"]:nth-of-type(1) {
+section[data-type="preface"] + section[data-type="chapter"], 
+section[data-type="titlepage"] + section[data-type="chapter"], 
+section[data-type="copyright-page"] + section[data-type="chapter"], 
+nav[data-type="toc"] + section[data-type="chapter"] {
   counter-reset: page 1;
 }
 
