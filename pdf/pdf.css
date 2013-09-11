@@ -119,6 +119,22 @@ nav[data-type="toc"] + section[data-type="chapter"] {
 
 /* ------------------- FRONTMATTER ------------------- */
 
+@page cover { 
+  margin: 0; 
+  padding: 0;
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+
+figure.cover img {
+  page: cover;
+  width: 100%;
+}
+
 section[data-type="halftitlepage"], 
 section[data-type="titlepage"] {
   page: blank;
