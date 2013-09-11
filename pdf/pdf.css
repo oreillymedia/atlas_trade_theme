@@ -826,13 +826,17 @@ div[data-type="example"] h5:before { /* figure captions are auto-numbered via th
 
 /* ------------------- BLOCKQUOTES ------------------- */
 
-blockquote {
+blockquote, blockquote[data-type="epigraph"] {
   font-family: 'OpenSans-Regular', sans-serif;
   font-size: 7.5pt;
   line-height: 11pt;
-  margin-left: 0.1667in;
+  margin: 10pt 0pt 10pt 0.1667in;
 }
 
 blockquote p {
   text-indent: 0;
+}
+
+blockquote p[data-type="attribution"] {
+  text-align: right;
 }
