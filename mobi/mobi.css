@@ -70,31 +70,19 @@ section[data-type="titlepage"] h2 {
   margin-top: 20px;
 }
 
-/* titlepage text font */
+/* styling and positioning for author names and other text */
 
-section[data-type="titlepage"] p.author, 
-section[data-type="titlepage"] p {
-  font-family: serif;
+section[data-type="titlepage"] p:first-of-type {
+  margin-top: 82pt;
 }
-
-/* all information other than title, subtitle, and author floats to the bottom */
 
 section[data-type="titlepage"] p {
-  font-size: 1em;
-  line-height: 120%;
-}
-
-/* styling and positioning for author names */
-
-section[data-type="titlepage"] div.author {
-  margin-top: 82px;
-}
-
-section[data-type="titlepage"] p.author {
-  font-size: 1em;
-  line-height: 120%;
-  margin-top: 0;
-  margin-bottom: 0;
+  font-family: 'Crimson-Roman', serif;
+  font-size: 13pt;
+  line-height: 16pt;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+  float: none;
 }
 
 /* copyright page */
@@ -113,18 +101,6 @@ section[data-type="copyright-page"] p {
   font-size: 0.8em;
   margin: 0;
   text-indent: 0;
-}
-
-section[data-type="copyright-page"] div.author {
-  margin: 0 0 20px 0;
-}
-
-section[data-type="copyright-page"] div.author p {
-  margin: 0;
-}
-
-section[data-type="copyright-page"] p.isbn {
-  margin: 25px 0;
 }
 
 /* dedication */
