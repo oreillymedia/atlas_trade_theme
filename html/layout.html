@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>{{ title }}</title>
   </head>
   <body data-type="book">
     <div class="navbar">
       <h1>{{ title }}</h1>
-      <p><a href="/toc.html">Contents</a></p>
+      <p><?toc_link?></p>
     </div>
     {{ content }}
+    <div class="navigation">
+      <ul>
+        <li><?next_link?></li>
+        <li><?prev_link?></li>
+      </ul>
+    </div>
   </body>
 </html>
