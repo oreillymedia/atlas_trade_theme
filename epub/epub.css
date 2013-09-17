@@ -143,9 +143,7 @@ nav[data-type="toc"] a {
 nav[data-type="toc"] > h1, 
 nav[data-type="toc"] li[data-type="chapter"], 
 nav[data-type="toc"] li[data-type="part"], 
-nav[data-type="toc"] li[data-type="appendix"], 
-nav[data-type="toc"] li[data-type="chapter"] > a:after, 
-nav[data-type="toc"] li[data-type="appendix"] > a:after {
+nav[data-type="toc"] li[data-type="appendix"] {
   font-family: sans-serif;
 }
 
@@ -157,8 +155,6 @@ nav[data-type="toc"] li[data-type="index"] a {
   font-style: italic;
 }
 
-nav[data-type="toc"] li[data-type="chapter"] li a:after, 
-nav[data-type="toc"] li[data-type="appendix"] li a:after, 
 nav[data-type="toc"] li[data-type="chapter"] ol {
   font-family: serif;
 }

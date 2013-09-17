@@ -484,6 +484,7 @@ pre { /* code blocks */
   font-size: 0.9em;
   line-height: 120%;
   margin: 10px;
+  overflow-x: auto;
 }
 
 code { /* inline code */
@@ -530,19 +531,19 @@ blockquote p {
 
 div.navbar {
   font-family: sans-serif;
-  background-color: #fff;
+  background-color: #E8E8E8;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 10px 20px 10px 20px;
   border-bottom: 1px solid #d8d8d8;
-  box-shadow: 0px 1px 3px #f0f0f0;
 }
 
 div.navbar h1 {
   float: left;
   font-size: 1em;
+  font-weight: normal;
   padding: 0;
   margin: 0;
   color: #999;
@@ -551,6 +552,7 @@ div.navbar h1 {
 div.navbar p {
   float: right;
   font-size: 1em;
+  font-weight: normal;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
@@ -584,9 +586,8 @@ div.navbar p a {
 
 div.navbar {
   position: relative;
-  width: 100%;
   padding: 10px 20px 10px 20px;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid #e8e8e8;
   box-shadow: 0px 0px 0px #f0f0f0;
   text-align: center;
 }
