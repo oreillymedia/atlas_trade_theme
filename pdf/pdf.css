@@ -897,3 +897,11 @@ blockquote p {
 blockquote p[data-type="attribution"] {
   text-align: right;
 }
+
+/* ------------------- PAGEBREAK HANDLING ------------------- */
+
+/* force a page break */
+
+div.hard-pagebreak {
+  page-break-after: always;
+}
