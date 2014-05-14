@@ -61,13 +61,15 @@ span[data-type="footnote"] {
 /* ------------------- GENERAL BLOCKS ------------------- */
 
 section[data-type="preface"] > h1 + p, 
+section[data-type="foreword"] > h1 + p,
 div[data-type="part"] > h1 + p, 
 section[data-type="chapter"] > h1 + p, 
 section[data-type="chapter"] > h1 + div.author p, 
 section[data-type="sect1"] > h1 + p, 
 section[data-type="sect2"] > h2 + p,
-section[data-type="sect3"] > h3 + p { 
-  text-indent: 0in; /* first paragraph following a heading has no indent */
+section[data-type="sect3"] > h3 + p,
+h1 + p, h2 + p, h3 + P { 
+  text-indent: 0; /* first paragraph following a heading has no indent */
 }
 
 p, dd { /* general text styles */
@@ -110,6 +112,11 @@ section[data-type="preface"] > h1 {
   bookmark-state: closed;
 }
 
+section[data-type="foreword"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
 section[data-type="chapter"] > h1 {
   bookmark-level: 1;
   bookmark-state: closed;
@@ -139,6 +146,7 @@ body[data-type="book"] {
 
 body[data-type="book"] > div[data-type="part"]:first-of-type, 
 section[data-type="preface"] + section[data-type="chapter"], 
+section[data-type="foreword"] + section[data-type="chapter"], 
 section[data-type="titlepage"] + section[data-type="chapter"], 
 section[data-type="copyright-page"] + section[data-type="chapter"], 
 nav[data-type="toc"] + section[data-type="chapter"] {
@@ -270,7 +278,7 @@ section[data-type="dedication"] {
 /* adding leaders and target page numbers to the table of contents */
 
 nav[data-type="toc"] li[data-type="preface"] a:after, 
-nav[data-type="toc"] li[data-type="forward"] a:after {
+nav[data-type="toc"] li[data-type="foreword"] a:after {
   font-family: 'Crimson-Semibold', serif;
   font-style: normal;
   content: leader(" ") target-counter(attr(href, url), page, lower-roman);
@@ -411,7 +419,8 @@ nav[data-type="toc"] li[data-type="foreword"] ol {
 
 /* preface, chapter, and appendix headings */
 
-section[data-type="preface"] > h1, 
+section[data-type="preface"] > h1,
+section[data-type="foreword"] > h1,
 section[data-type="chapter"] > h1, 
 section[data-type="appendix"] > h1 {
   font-family: 'OpenSans-CondBold', sans-serif;
@@ -422,6 +431,10 @@ section[data-type="appendix"] > h1 {
 }
 
 section[data-type="preface"] > h1 {
+  string-set: ChapterTitle self;
+}
+
+section[data-type="foreword"] > h1 {
   string-set: ChapterTitle self;
 }
 
@@ -521,6 +534,47 @@ section[data-type="sect3"] > h3 { /* C-level headings */
 section[data-type="preface"] {
   page: preface;
   page-break-before: right; /* forces the preface to start on a right hand page */
+  counter-reset: FigureNumber TableNumber footnote; /* setting auto-numbers for figures, tables, and footnotes to start at 1 */
+}
+
+/* ------------------- FOREWORDS ------------------- */
+
+@page foreword:first {
+  @bottom-left {
+    content: normal;
+  }
+}
+
+@page foreword:left {
+  @bottom-left {
+    content: counter(page, lower-roman);
+  }
+  @bottom-right {
+    content: string(ChapterTitle);
+  }
+}
+
+@page foreword:right {
+  @bottom-left {
+    content: string(SectionTitle);
+  }
+  @bottom-right {
+    content: counter(page, lower-roman);
+  }
+}
+
+@page foreword:blank { 
+  @bottom-left {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+
+section[data-type="foreword"] {
+  page: foreword;
+  page-break-before: right; /* forces the foreword to start on a right hand page */
   counter-reset: FigureNumber TableNumber footnote; /* setting auto-numbers for figures, tables, and footnotes to start at 1 */
 }
 
