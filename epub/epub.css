@@ -389,7 +389,7 @@ div.sect1[title="Safari® Books Online"] div.note h3 {
 
 div.table, table {
   margin: 20px auto 30px auto !important;
-  max-width: 95%;
+  max-width: 100;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -450,7 +450,7 @@ table caption{
   font-weight: normal;
   font-style: italic;
   font-family: serif, "DejaVuSerif";
-  margin: 10px 0 -10px 0 !important;
+  margin: 10px 0 0 0 !important;
   text-align: left;
   padding: 0;
   page-break-after: avoid;
