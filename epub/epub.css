@@ -201,7 +201,7 @@ div[data-type="part"] h1 {
   padding: 50px 0 10px 0;
 }
   
-/* ----------------- images ----------------- */
+/* ----------------- figures ----------------- */
 
 img {
   max-width: 95%;
@@ -224,13 +224,6 @@ div.figure {
   page-break-inside: avoid;
 }
 
-figure {
-    margin: 15px 0px 15px 0px !important;
-    page-break-inside: avoid;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
 div.figure h6 {
   font-size: 75%;
   text-align: left;
@@ -240,7 +233,7 @@ div.figure h6 {
   padding: 0;
   page-break-before: avoid;
   page-break-after: avoid;
-  margin: 0 0;
+  margin: 5px 0;
 }
 
 div.informalfigure {
