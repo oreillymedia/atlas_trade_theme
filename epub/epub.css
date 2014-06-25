@@ -2,9 +2,8 @@
 
 /* O'Reilly Media, 2014; version 4.0.0 */
 /* colors
-Header blue #2c5697
+
 Light blue background #eef2ff
-Link dark blue #000078
 */
 /* reset */
 
@@ -102,7 +101,7 @@ span.smaller { font-size: 75%; }
 .boxedtext, .keycap {
   border-style: solid;
   border-width: 1px;
-  border-color: #000078;
+  border-color: #000000;
   padding: 1px;
 }
 
@@ -128,6 +127,9 @@ span.gray50 {
 /* See EBK-2920 */
 
 .preserve-whitespace { white-space: pre-wrap; }
+
+/*table and figure numbers in bold */
+span.label {font-weight: bold;}
 
 /* ----------------- headings ----------------- */
 
@@ -157,16 +159,17 @@ section[data-type="sect1"] h1 {
 section[data-type="sect2"] h2 {
   font-size: 1.1em;
   margin: 30px 0 8px 0 !important;
+  text-transform: uppercase;
 }
 
 section[data-type="sect3"] h3 {
-  font-size: 1em;
-  color: #555;
+  font-size: 0.9em;
+  color: #000000;
   margin: 20px 0px 8px 0px !important;
 }
 
 section[data-type="sect4"] h4 {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: normal;
   font-style: italic;
   margin: 15px 0px 6px 0px !important;
@@ -181,7 +184,7 @@ section[data-type="index"] > div > h1 { /* larger chapter title */
   line-height: 1;
   margin-bottom: 50px;
   margin-top: 20px;
-  color: #2c5697;
+  color: #000000;
   padding: 10px 30px;
   max-width: 90%;
   text-align: center;
@@ -198,7 +201,7 @@ div[data-type="part"] h1 {
   padding: 50px 0 10px 0;
 }
   
-/* ----------------- images ----------------- */
+/* ----------------- figures ----------------- */
 
 img {
   max-width: 95%;
@@ -207,7 +210,7 @@ img {
 }
 
 div.figure img {
-   border-bottom: 1px solid #000078;
+   border-bottom: 1px solid #000000;
    padding-bottom: 10px;
 }
 
@@ -221,13 +224,6 @@ div.figure {
   page-break-inside: avoid;
 }
 
-figure {
-    margin: 15px 0px 15px 0px !important;
-    page-break-inside: avoid;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
 div.figure h6 {
   font-size: 75%;
   text-align: left;
@@ -237,7 +233,7 @@ div.figure h6 {
   padding: 0;
   page-break-before: avoid;
   page-break-after: avoid;
-  margin: 0 0;
+  margin: 5px 0;
 }
 
 div.informalfigure {
@@ -253,7 +249,9 @@ div.sidebar {
   padding: 10px 15px 15px 15px !important;
   margin: 20px 0 20px 0;
   page-break-inside: avoid;
-  border: 1px solid #2c5697; 
+  border: 1px solid #000000; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 aside[data-type="sidebar"] {
@@ -295,7 +293,7 @@ div.sidebar div.caution, div.sidebar div.important {
   margin: 20px auto 20px auto !important;
   font-size: 90%;
   width: 85%;
-  border: 0px solid #000078;
+  border: 0px solid #000000;
 }
 
 div.sidebar div.figure, aside[data-type="sidebar"] figure {
@@ -312,13 +310,11 @@ div.warning,
 div[data-type="warning"], 
 div.caution, 
 div.important {
-  margin: 15px 0px 10px 0px !important;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #000078;
-  background-color: #eef2ff;
+  margin: 20px 50px 20px 30px !important;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   font-size: 90%;
-  padding: 15px !important;
+  padding: 5px 0px 12px 0px !important;
   page-break-inside: avoid;
 }
 
@@ -338,7 +334,7 @@ div.important h3 {
   text-align: center;
   margin: 4px 0 6px 0 !important;
   page-break-inside: avoid;
-  color: 2c5697;
+  color: #000000;
 }
 
 div.tip ul li p, 
@@ -370,7 +366,7 @@ div.sect1[title="Safari® Books Online"] div.note,
 div.safarienabled {
   background-color: transparent;
   margin: 8px 0 0 !important;
-  border: 0px solid #2c5697;
+  border: 0px solid #000000;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   font-size: 100%;
@@ -386,7 +382,7 @@ div.sect1[title="Safari® Books Online"] div.note h3 {
 
 div.table, table {
   margin: 20px auto 30px auto !important;
-  max-width: 95%;
+  max-width: 100;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -397,13 +393,13 @@ div.table, div.informaltable {
 
 tr,
 tr td {
-  border-bottom: 1px solid #000078;
+  border-bottom: 1px solid #000000;
 }
 
 thead td,
 thead th {
-  border-bottom: #000078 0px solid !important;
-  border-top: #000078 0px solid !important; 
+  border-bottom: #000000 0px solid !important;
+  border-top: #000000 0px solid !important; 
 }
 
 tr:nth-of-type(even) {
@@ -414,6 +410,7 @@ thead {
   font-family: sans-serif, "DejaVuSans";
   color: #000;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 td,
@@ -437,7 +434,7 @@ div.informaltable table tr:nth-of-type(even) {
 }
 
 div.informaltable td, div.informaltable th {
-  border: #000078 1px solid;
+  border: #000000 1px solid;
 }
 
 div.table-title,
@@ -446,7 +443,7 @@ table caption{
   font-weight: normal;
   font-style: italic;
   font-family: serif, "DejaVuSerif";
-  margin: 10px 0 10px 0 !important;
+  margin: 10px 0 0 0 !important;
   text-align: left;
   padding: 0;
   page-break-after: avoid;
@@ -518,7 +515,7 @@ div[data-type="example"] h1, div[data-type="example"] h2, div[data-type="example
   font-weight: normal;
   font-family: serif, "DejaVuSerif";
   margin: 10px 0 5px 0 !important;
-  border-bottom: 1px solid #000078;
+  border-bottom: 1px solid #000000;
 }
 
 li pre.example {
@@ -543,13 +540,13 @@ section[data-type="titlepage"] > div > h1 {
 }
 
 section[data-type="titlepage"] > div > h2[data-type="author"] {
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: sans-serif, "DejaVuSans";
   font-weight: bold;
   margin: 50px 0 !important;
   text-align: center;
   padding: auto 25px;
-  color: #2c5697;
+  color: #000000;
 }
 
 div.book div.titlepage div.publishername {
@@ -704,7 +701,7 @@ p.right {
 div[data-type="footnotes"],
 div.footnote {
   font-size: 90%;
-  border-top: 1px solid #000078; 
+  border-top: 1px solid #000000; 
   margin-top: 50px;
 }
 
