@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
 /* O'Reilly Media, 2014; version 4.0.0 */
+/* colors
 
+Light blue background #eef2ff
+*/
 /* reset */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
@@ -64,7 +67,7 @@ strong, span.bold {
 
 a.ulink, a.xref, a.email, a.link, a {
   text-decoration: none;
-  color: #8e0012;
+  color: #000078;
 }
 
 sup {  /* bug in webkit? */
@@ -80,7 +83,7 @@ sub {
 span.lineannotation {
   font-style: italic;
   color: #A62A2A;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
 }
 
 span.underline { text-decoration: underline; }
@@ -98,7 +101,7 @@ span.smaller { font-size: 75%; }
 .boxedtext, .keycap {
   border-style: solid;
   border-width: 1px;
-  border-color: #000;
+  border-color: #000000;
   padding: 1px;
 }
 
@@ -125,6 +128,9 @@ span.gray50 {
 
 .preserve-whitespace { white-space: pre-wrap; }
 
+/*table and figure numbers in bold */
+span.label {font-weight: bold;}
+
 /* ----------------- headings ----------------- */
 
 /* shared heading styles */
@@ -135,7 +141,7 @@ h1, div.toc-title, h2, h3, h4, h5 {
   font-weight: bold;
   text-align: left;
   page-break-after: avoid !important;
-  font-family: sans-serif, "DejaVuSans";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
 }
 
 div.toc-title {
@@ -146,23 +152,24 @@ div.toc-title {
 
 section[data-type="sect1"] h1 { 
   font-size: 1.3em;
-  color: #000000;
+  color: #000;
   margin: 40px 0 8px 0;
 }
 
 section[data-type="sect2"] h2 {
   font-size: 1.1em;
   margin: 30px 0 8px 0 !important;
+  text-transform: uppercase;
 }
 
 section[data-type="sect3"] h3 {
-  font-size: 1em;
-  color: #555;
+  font-size: 0.9em;
+  color: #000000;
   margin: 20px 0px 8px 0px !important;
 }
 
 section[data-type="sect4"] h4 {
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: normal;
   font-style: italic;
   margin: 15px 0px 6px 0px !important;
@@ -172,24 +179,16 @@ section[data-type="chapter"] > div > h1,
 section[data-type="preface"] > div > h1,
 section[data-type="appendix"] > div > h1,
 section[data-type="glossary"] > div > h1,
-section[data-type="index"] > div > h1,
-section[data-type="acknowledgments"] > div > h1,
-section[data-type="introduction"] > div > h1
-
-{ /* larger chapter title */
+section[data-type="index"] > div > h1 { /* larger chapter title */
   font-size: 2em;
   line-height: 1;
-  margin-bottom: 30px;
-  margin-top: 40px;
-  color: #000;
-  padding-bottom: 10px;
-  border-bottom: 0px solid #000;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  color: #000000;
+  padding: 10px 30px;
+  max-width: 90%;
+  text-align: center;
 }
-
-h2 span.label,
-h1 span.label,
-h3 span.label,
-.hidden {display: none;}
 
 /* ----------------- parts ----------------- */
 
@@ -198,11 +197,11 @@ div[data-type="part"] h1 {
   text-align: center;
   margin-top: 0px !important;
   margin-bottom: 50px;
+  margin-top: 20px;
   padding: 50px 0 10px 0;
-  border-bottom: 1px solid #000;
 }
   
-/* ----------------- images ----------------- */
+/* ----------------- figures ----------------- */
 
 img {
   max-width: 95%;
@@ -210,32 +209,31 @@ img {
   padding: 0;
 }
 
+div.figure img {
+   border-bottom: 1px solid #000000;
+   padding-bottom: 10px;
+}
+
 div.figure {
   background-color: transparent;
   text-align: center;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #DCDCDC;
-  padding: 15px 5px 15px 5px !important;
+  padding: 15px 20px 15px 0px !important;
   margin: 15px 0px 15px 0px !important;
   page-break-inside: avoid;
 }
 
-figure {
-    margin: 15px 0px 15px 0px !important;
-    page-break-inside: avoid;
-}
-
 div.figure h6 {
-  font-size: 90%;
+  font-size: 75%;
   text-align: center;
   font-weight: normal;
-  font-style: italic;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   color: #000;
-  padding-top: 10px !important;
+  padding: 0;
   page-break-before: avoid;
   page-break-after: avoid;
+  margin: 5px 0;
 }
 
 div.informalfigure {
@@ -243,77 +241,17 @@ div.informalfigure {
   padding: 5px 0 !important;
 }
 
-/* ----------------- poems ----------------- */
-section[data-type="chapter"] div[data-type="poem"] {
-  padding-left: 16px;
-  padding-right: 5px; 
-  border-left: 2px solid #BDC9CF;
-  border-right: 2px solid #BDC9CF;
-  margin-bottom: 0.15in;
-  margin-top: 0;
-  padding-top: 0;
-}
-
-section[data-type="chapter"] div[data-type="poem"] > p {
-  margin-left: 54px; 
-  text-indent: -30px; 
-  word-spacing: 0.2px;
-  -webkit-hyphens: none;
-  hyphens: none;
-  adobe-hyphenate: none;
-}
-
-section[data-type="chapter"] div[data-type="poem"] > p > sup {
-  display: inline-block;
-  margin-left: -12px; 
-  margin-right:-2px;
-  text-align: right;
-  max-width: 15px;
-  font-family: "MinionPro", serif;
-  font-size: 0.6em;
-  height: 0;
-  line-height: 1;
-  position: relative;
-}
-
-sub { vertical-align: baseline }
-sup { vertical-align: text-top }
-
-section[data-type="chapter"] div[data-type="poem"] > p.block-verse {
-  margin-left: 0;
-  text-indent: 0;
-  margin-top: 10px;
-  margin-left: 4px;
-  text-align: justify;
-  margin-right: 6px;
-}
-
-
-section[data-type="chapter"] div[data-type="poem"] > p.block-verse > sup {
-  margin-left: 0;
-  text-align: right;
-  max-width: 25px;
-  margin-right: 15px;
-  margin-top: -2px;
-}
-
-section[data-type="chapter"] div[data-type="poem"].noborder {
-  border-left: none;
-  border-right:none;
-  margin-left: 15px;
-}
 
 /* ----------------- sidebars ----------------- */
 
 div.sidebar {
-  margin: 15px 0px 10px 0px !important;
+  font-size: 90%;
+  padding: 10px 15px 15px 15px !important;
+  margin: 20px 0 20px 0;
+  page-break-inside: avoid;
+  border: 1px solid #000000; 
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #DCDCDC;
-  background-color: #F7F7F7;
-  font-size: 90%;
-  padding: 15px !important;
-  page-break-inside: avoid;
 }
 
 aside[data-type="sidebar"] {
@@ -323,13 +261,13 @@ aside[data-type="sidebar"] {
 
 div.sidebar-title, aside[data-type="sidebar"] h5 {
   font-weight: bold;
-  font-size: 1em;
-  font-family: sans-serif, "DejaVuSans";
+  font-size: 110%;
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
-  margin: 4px 0 6px 0 !important;
-  page-break-inside: avoid;
+  vertical-align: top;
+  padding: 5px 40px; 
 }
 
 div.sidebar div.figure p.title, 
@@ -339,7 +277,7 @@ div.sidebar div.informalfigure div.caption {
   text-align: center;
   font-weight: normal;
   font-style: italic;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   color: #000;
   padding: 5px !important;
   page-break-before: avoid;
@@ -355,11 +293,167 @@ div.sidebar div.caution, div.sidebar div.important {
   margin: 20px auto 20px auto !important;
   font-size: 90%;
   width: 85%;
+  border: 0px solid #000000;
 }
 
 div.sidebar div.figure, aside[data-type="sidebar"] figure {
   border: none;
 }
+
+/* ----------------- admonitions ----------------- */
+
+div.tip, 
+div[data-type="tip"], 
+div.note, 
+div[data-type="note"], 
+div.warning, 
+div[data-type="warning"], 
+div.caution, 
+div.important {
+  margin: 20px 50px 20px 30px !important;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  font-size: 90%;
+  padding: 5px 0px 12px 0px !important;
+  page-break-inside: avoid;
+}
+
+div.tip h3, 
+div[data-type="tip"] h6, 
+div.note h3, 
+div[data-type="note"] h6, 
+div.warning h3, 
+div[data-type="warning"] h6, 
+div.caution h3, 
+div.important h3 {
+  font-weight: bold;
+  font-size: 1em;
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 4px 0 6px 0 !important;
+  page-break-inside: avoid;
+  color: #000000;
+}
+
+div.tip ul li p, 
+div[data-type="tip"] ul li p, 
+div.note ul li p, 
+div[data-type="note"] ul li p, 
+div.warning ul p, 
+div[data-type="warning"] ul li p, 
+div.caution ul li p, 
+div.important  ul li p{
+    margin-left: 5px;
+    padding-left: 0;
+}
+
+div.tip ul li, 
+div[data-type="tip"] ul li, 
+div.note ul li, 
+div[data-type="note"] ul li, 
+div.warning ul li, 
+div[data-type="warning"] ul li, 
+div.caution ul li, 
+div.important  ul li { 
+  padding: 0px;
+  margin-left: 10px;
+}
+
+
+div.sect1[title="Safari® Books Online"] div.note, 
+div.safarienabled {
+  background-color: transparent;
+  margin: 8px 0 0 !important;
+  border: 0px solid #000000;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  font-size: 100%;
+  padding: 0px !important;
+  page-break-inside: avoid;
+}
+
+div.sect1[title="Safari® Books Online"] div.note h3 {
+  display: none;
+}
+
+/* ----------------- tables ----------------- */
+
+div.table, table {
+  margin: 20px auto 30px auto !important;
+  max-width: 100;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+div.table, div.informaltable {
+  page-break-inside: avoid;
+}
+
+tr,
+tr td {
+  border-bottom: 1px solid #000000;
+}
+
+thead td,
+thead th {
+  border-bottom: #000000 0px solid !important;
+  border-top: #000000 0px solid !important; 
+}
+
+tr:nth-of-type(even) {
+  background-color: #eef2ff;
+}
+
+thead {
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  color: #000;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+td,
+th {
+  padding: 0.3em;
+  text-align: left;
+  vertical-align: baseline;
+  font-size: 75%;
+}
+
+div.informaltable table {
+  margin: 10px auto !important;
+}
+
+div.informaltable table tr {
+  border-bottom: none;
+}
+
+div.informaltable table tr:nth-of-type(even) {
+  background-color: transparent;
+}
+
+div.informaltable td, div.informaltable th {
+  border: #000000 1px solid;
+}
+
+div.table-title,
+table caption{
+  font-size: 75%;
+  font-weight: normal;
+  font-style: italic;
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  margin: 10px 0 0 0 !important;
+  text-align: left;
+  padding: 0;
+  page-break-after: avoid;
+}
+
+table code {
+  font-size: smaller;
+}
+
+
 
 /* ----------------- code ----------------- */
 
@@ -419,9 +513,9 @@ div[data-type="example"] {
 div[data-type="example"] h1, div[data-type="example"] h2, div[data-type="example"] h3, div[data-type="example"] h4, div[data-type="example"] h5, div[data-type="example"] h6 {
   font-style: italic;
   font-weight: normal;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   margin: 10px 0 5px 0 !important;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #000000;
 }
 
 li pre.example {
@@ -438,7 +532,7 @@ span.gray { /* Added for DOM Enlightenment 9781449342845 */
 
 section[data-type="titlepage"] > div > h1 {
   font-size: 3em;
-  font-family: sans-serif, "DejaVuSans";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-weight: bold;
   margin: 50px 0 10px 0 !important;
   line-height: 1;
@@ -446,12 +540,13 @@ section[data-type="titlepage"] > div > h1 {
 }
 
 section[data-type="titlepage"] > div > h2[data-type="author"] {
-  font-size: 2em;
-  font-family: sans-serif, "DejaVuSans";
+  font-size: 1.5em;
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-weight: bold;
-  color: #8e0012;
   margin: 50px 0 !important;
   text-align: center;
+  padding: auto 25px;
+  color: #000000;
 }
 
 div.book div.titlepage div.publishername {
@@ -488,21 +583,21 @@ section.preface[title="Dedication"] p {
 div.colophon h1.title {
   font-size: 1.3em;
   margin: 0 !important;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-weight: normal;
 }
 
 div.colophon h2.subtitle {
   margin: 0 !important;
   color: #000;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-size: 1em;
   font-weight: normal;
 }
  
 div.colophon div.author h3.author {
   font-size: 1.1em;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   margin: 10px 0 0 !important;
   font-weight: normal;
 }
@@ -511,14 +606,14 @@ div.colophon div.editor h4, div.colophon div.editor h3.editor {
   color: #000;
   font-size: 0.8em;
   margin: 15px 0 0 !important;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-weight: normal;
 }
 
 div.colophon div.editor h3.editor {
   font-size: 0.8em;
   margin: 0 !important;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-weight: normal;
 }
 
@@ -537,13 +632,13 @@ div.legalnotice p, div.timestamp p {
 }
 
 div.timestamp p {
-  margin-top: 10px;
+  margin-top: 10pt;
 }
 
 div.colophon[title="About the Author"] h1.title, div.colophon[title="Colophon"] h1.title {
   font-size: 1.5em;
   margin: 0 !important;
-  font-family: sans-serif, "DejaVuSans";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-weight: bold;
 }
 
@@ -564,7 +659,7 @@ div.attribution {
 h3.author span.orgname { display: none } /* to work around bug */
 
 div.epigraph {
-  margin: 10px 0 10px 20px !important;
+  margin: 10px 0 10px 40px !important;
   page-break-inside: avoid;
   font-size: 90%;
 }
@@ -574,15 +669,17 @@ div.epigraph p {
 }
 
 blockquote, div.blockquote {
-  margin: 10px !important;
+  margin: 20px 40px 25px 20px !important;
   page-break-inside: avoid;
   font-size: 95%;
 }
 
 blockquote p, div.blockquote p {
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   font-style: italic;
 }
+blockquote p[data-class="author"],
+.author { text-align: right;}
 
 blockquote div.attribution {  
   margin: 5px 0 0 30px !important;
@@ -601,9 +698,13 @@ p.right {
 
 /* ----------------- footnotes ----------------- */
 
+div[data-type="footnotes"],
 div.footnote {
   font-size: 90%;
+  border-top: 1px solid #000000; 
+  margin-top: 50px;
 }
+
 
 /* ----------------- refentries ----------------- */
 
@@ -633,10 +734,12 @@ div.refnamediv p {
 }
 
 /* ----------------- lists ----------------- */
+dl { margin-top: 10px;}
 
 dt {
   padding-top: 10px !important;
   padding-bottom: 0 !important;
+  font-style: italic;
 }
 
 dt span.term {
@@ -672,7 +775,7 @@ ol ol ol {
 }
 
 ul { 
-  list-style-type: square;
+  list-style-type: disc;
   margin-top: 8px !important;
   margin-bottom: 8px !important;
   margin-left: 5px !important;
@@ -698,7 +801,7 @@ ul ul ul li p:before {
 }
 
 ul ul ul { 
-  list-style-type: square;
+  list-style-type: disc;
   margin-left: 20px !important;
   padding-left: 30px !important;
 }
@@ -761,7 +864,7 @@ div.toc ol li {
 }
 
 div.toc a {
-  color: #8e0012;
+  color: #000078;
 }
 
 div.toc ol a {
@@ -780,156 +883,6 @@ div.toc ol > li > ol > li > ol a {
   font-size: 1em;
 }
 
-/* ----------------- admonitions ----------------- */
- 
-div.tip, 
-div[data-type="tip"], 
-div.note, 
-div[data-type="note"], 
-div.warning, 
-div[data-type="warning"], 
-div.caution, 
-div.important {
-  margin: 30px !important;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  font-size: 90%;
-  padding: 10px 8px 20px 8px !important;
-  page-break-inside: avoid;
-}
-
-div.tip, 
-div[data-type="tip"], 
-div.note, 
-div[data-type="note"], 
-div.important {
-  border: 1px solid #BEBEBE;
-  background-color: transparent;
-}
-
-div.warning, 
-div[data-type="warning"], 
-div.caution {
-  border: 1px solid #BC8F8F;
-}
-
-div.tip h3, 
-div[data-type="tip"] h6, 
-div.note h3, 
-div[data-type="note"] h6, 
-div.warning h3, 
-div[data-type="warning"] h6, 
-div.caution h3, 
-div.important h3 {
-  font-weight: bold;
-  font-size: 110%;
-  font-family: sans-serif, "DejaVuSans";
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-  margin: 4px 0 6px !important;
-}
-
-div.tip h3, 
-div[data-type="tip"] h6, 
-div.note h3, 
-div[data-type="note"] h6, 
-div.important h3 {
-  color: #737373;
-}
-
-div.warning h3, 
-div[data-type="warning"] h6, 
-div.caution h3 {
-  color: #C67171;
-}
-
-div.sect1[title="Safari® Books Online"] div.note, 
-div.safarienabled {
-  background-color: transparent;
-  margin: 8px 0 0 !important;
-  border: 0px solid #BEBEBE;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
-  font-size: 100%;
-  padding: 0px !important;
-  page-break-inside: avoid;
-}
-
-div.sect1[title="Safari® Books Online"] div.note h3 {
-  display: none;
-}
-
-/* ----------------- tables ----------------- */
-
-div.table, table {
-  margin: 15px auto 30px auto !important;
-  max-width: 95%;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-div.table, div.informaltable {
-  page-break-inside: avoid;
-}
-
-tr,
-tr td {
-  border-bottom: 0px solid #c3c3c3;
-}
-
-thead td,
-thead th {
-  border-bottom: #9d9d9d 0px solid !important;
-  border-top: #9d9d9d 0px solid !important; 
-}
-
-
-thead {
-  font-family: sans-serif, "DejaVuSans";
-  color: #000;
-  font-weight: bold;
-}
-
-td,
-th {
-  padding: 0.3em;
-  text-align: left;
-  vertical-align: baseline;
-  font-size: 80%;
-}
-
-div.informaltable table {
-  margin: 10px auto !important;
-}
-
-div.informaltable table tr {
-  border-bottom: none;
-}
-
-div.informaltable table tr:nth-of-type(even) {
-  background-color: transparent;
-}
-
-div.informaltable td, div.informaltable th {
-  border: #9d9d9d 0px solid;
-}
-
-div.table-title,
-table caption{
-  font-weight: normal;
-  font-style: italic;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
-  margin: 10px 0 10px 0 !important;
-  text-align: center;
-  padding: 0;
-  page-break-after: avoid;
-}
-
-table code {
-  font-size: smaller;
-}
-
 /* ----------------- Equations ----------------- */
 
 div.equation {
@@ -939,7 +892,7 @@ div.equation {
 div.equation-title {
   font-style: italic;
   font-weight: normal;
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   margin: 20px 0 10px 0 !important;
   page-break-after: avoid;
 }
@@ -970,16 +923,35 @@ div.informalequation img {
   width: 75%;
 }
 
+/* ----------------- Appendix ----------------- */
+section[data-type="appendix"] section[data-type="sect1"] h1 {
+    margin-bottom: 0;
+    padding:0px;
+}
+
+section[data-type="appendix"] section[data-type="sect1"] dl { 
+    font-size: 90%;
+    clear: both;
+     padding:0px;
+}   
+
+section[data-type="appendix"] section[data-type="sect1"] dt a { 
+ margin-top: -5px;
+ padding:0px;}
+
+section[data-type="appendix"] section[data-type="sect1"] dd p {
+ padding:0px;
+ margin-bottom: -5px;}
+
 /* ----------------- index ----------------- */
 
 div.index {
-  font-weight: bold;
+  font-weight: normal;
   text-indent: 0;
 }
 
-div.index li {
-  line-height: 140%;
-}
+div.index h3 {font-weight: bold;}
+
 
 div.index a.indexterm {
   color: #8e0012;
@@ -997,185 +969,8 @@ div.index ul li {
 }
 
 div.index ul li ul li {
-    margin-left: 20px;
+    margin-left: 15px;
 }
-
-/* ------------------------------------------------------- */
-/* ----------------- custom front matter ----------------- */
-/* ------------------------------------------------------- */
-
-
-/* halftitle page */
-section[data-type="halftitlepage"] {
-  page-break-after: always;
-  padding-top: 2px;
-}
-
-section[data-type="halftitlepage"] h1 {
-  font-family: serif;
-  font-size: 21px;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 3px;
-  margin-top: 3px;
-}
-
-section[data-type="halftitlepage"]  p {  text-align: center;}
-
-section[data-type="halftitlepage"]  p em {
-  font-family: "MinionPro", serif;
-  font-size: 15px;
-  text-transform: none;
-  font-style: italic;
-  font-weight: normal;
-  margin-bottom: 0;
-}
-
-section[data-type="halftitlepage"]  h2 {
-  font-family: serif;
-  font-size: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-top: 5px;
-
-}
-
-section[data-type="halftitlepage"] h2  em { 
-  font-family: serif;
-  font-size: 8px;
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-/*forward page*/
-section[data-type="preface"] {
-  page-break-after: always;
-}
-
-section[data-type="preface"]  h1 {
-  font-family: "MinionPro", serif;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 4px;
-  font-weight: normal;
-  margin-top: -5px;
-  font-size: 30px;
-}
-
-section[data-type="preface"]  p:first-of-type {
-  margin-bottom: 20px;
-}
-
-section[data-type="preface"]  p {
-  font-family: "MinionPro", serif;
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-section[data-type="preface"] p em {
-  font-style: italic;
-}
-
-
-/*title page*/
-section[data-type="titlepage"] {
-  page-break-after: always;
-  page: titlepage;
-  text-align: center;
-  margin-right: auto !important; 
-  margin-left: auto !important;
-}
-
-section[data-type="titlepage"] div.outertitlebox {
-  border: 1px solid #000000;
-  padding: 4px;
-}
-
-section[data-type="titlepage"]  div.outertitlebox  div.titlebox {
-  border: 1px solid #000000;
-}
-
-
-
-section[data-type="titlepage"]  div.outertitlebox  div.titlebox  h1 {
-  font-family: serif;
-  font-size: 22px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  margin-top: 40px;
-}
-
-section[data-type="titlepage"] div.outertitlebox  div.titlebox  h2 {
-  font-family: "MinionPro", serif;
-  font-size: 20px;
-  text-align: center;
-  font-style: italic;
-  font-weight: normal;
-margin-bottom: -30px;  margin-top:0;
-}
-
-section[data-type="titlepage"]  div.outertitlebox  div.titlebox  p[data-type="author"] 
-{
-  font-family: serif;
-  font-size: 18px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-  margin-top: 0;
-  font-weight: 700;
-}
-
-section[data-type="titlepage"]  div.outertitlebox div.titlebox  p[data-type="author"]:first-of-type 
-{
-  font-family: serif;
-  font-size: 18px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 0;
-  margin-top: 45px;
-  font-weight: normal;
-}
-
-section[data-type="titlepage"] p { text-align: center;}
-
-
-/*copyright page*/
-section[data-type="copyright-page"] {
-  page-break-after: always;
-}
-
-section[data-type="copyright-page"]  p {
-  font-family: "MinionPro", Symbola, serif;
-  text-align: center;
-  font-size: 75%;
-}
-
-section[data-type="copyright-page"] > div,
-section[data-type="copyright-page"] .copyrightLeft  {
-  margin-bottom: 7px;
-}
-
-section[data-type="copyright-page"] div.copyrightLeft p,
-section[data-type="copyright-page"] p.copyrightLeft {
-  text-align: justify;
-}
-
-section[data-type="copyright-page"] > div > p > span.inlineimage > img {
-  display: inline-block;
-  width: 8px;
-}
-
-section[data-type="copyright-page"] div.smallwidth {
- width: auto;
-}
-
-section[data-type="copyright-page"] .copyrightRight { 
- text-align: right;
- }
 
 /* ----------------- syntax highlighting and coloring text in general ----------------- */
 
@@ -1375,7 +1170,7 @@ div.blockquote_sampler_toc {
 /* keep this body statement last before custom placeholder */
 
 body {
-  font-family: serif, "DejaVuSerif", "ArialUnicode";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
   text-align: left;
 }
 
@@ -1428,12 +1223,9 @@ body {
 @font-face {
   font-family: "ArialUnicode";
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
   src: url(ArialUnicode.ttf);
 }
 
-/* Add your custom CSS styles for the EPUB here */
 
-/* Add your custom CSS styles for the EPUB here */
 
-/* Add your custom CSS styles for the EPUB here */
