@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+
 @page { /* defining overall trim size and page layout */
   size: 5.5in 8.5in; /* width, heigth */
   margin: 54pt 0.75in 54pt 0.75in; /* white space around the page */
@@ -18,40 +21,40 @@
     vertical-align: top;
   }
   @footnote { /* Place footnotes at the bottom of the page */
-  	margin-top: 0.25in;
-  	margin-bottom: 0;
-  	padding-top: 6pt;
-  	padding-bottom: 0;
-  	border-top: solid 0.5pt cmyk(0%,0%,0%,100%);
-  	border-length: 25%;
-  	-ah-float: page bottom;
+    margin-top: 0.25in;
+    margin-bottom: 0;
+    padding-top: 6pt;
+    padding-bottom: 0;
+    border-top: solid 0.5pt cmyk(0%,0%,0%,100%);
+    border-length: 25%;
+    -ah-float: page bottom;
   }
 }
 
 @page :blank { /* blank pages should not have anything in the footer */
   @bottom-left {
-	  content: none;
-	}
-	@bottom-right {
-		content: none;
-	}
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
 }
 
 /* Footnote settings */
 span[data-type="footnote"] {
-	-ah-float: footnote;
-	font-size: 8pt;
-	line-height: 10pt;
-	margin-left: 8pt;
-	margin-bottom: 3pt;
-	text-align: left;
-	text-indent: 0;
+  -ah-float: footnote;
+  font-size: 8pt;
+  line-height: 10pt;
+  margin-left: 8pt;
+  margin-bottom: 3pt;
+  text-align: left;
+  text-indent: 0;
 }
 
 ::footnote-call,
 ::footnote-marker {
-	content: counter(footnote, decimal);
-	line-height: 5pt;
+  content: counter(footnote, decimal);
+  line-height: 5pt;
 }
 
 ::footnote-call { font-size: 6pt }
@@ -93,44 +96,6 @@ a {
   font-style: italic; /* links are italicized */
 }
 
-/* ------------------- PDF BOOKMARKS ------------------- */
-
-/* bookmark labels will be included for the headings listed below */
-
-nav[data-type="toc"] > h1 {
-  bookmark-level: 1;
-  bookmark-state: closed;
-}
-
-div[data-type="part"] > h1 {
-  bookmark-level: 1;
-  bookmark-state: closed;
-}
-
-section[data-type="preface"] > h1 {
-  bookmark-level: 1;
-  bookmark-state: closed;
-}
-
-section[data-type="foreword"] > h1 {
-  bookmark-level: 1;
-  bookmark-state: closed;
-}
-
-section[data-type="chapter"] > h1 {
-  bookmark-level: 1;
-  bookmark-state: closed;
-}
-
-section[data-type="appendix"] > h1 {
-  bookmark-level: 1;
-  bookmark-state: closed;
-}
-
-section[data-type="sect1"] > h1 {
-  bookmark-level: 2;
-  bookmark-state: closed;
-}
 
 /* ------------------- COUNTER RESET ------------------- */
 
@@ -420,15 +385,20 @@ nav[data-type="toc"] li[data-type="foreword"] ol {
 /* preface, chapter, and appendix headings */
 
 section[data-type="preface"] > h1,
-section[data-type="foreword"] > h1,
+section[data-type="foreword"] > h1, 
 section[data-type="chapter"] > h1, 
-section[data-type="appendix"] > h1 {
+section[data-type="appendix"] > h1,
+section[data-type="index"] > h1,
+section[data-type="glossary"] > h1,
+section[data-type="colophon"] h1, 
+section.abouttheauthor h1  {
   font-family: 'OpenSans-CondBold', sans-serif;
   font-size: 18pt;
   line-height: 22pt;
   margin-bottom: 28pt;
   text-align: center;
 }
+
 
 section[data-type="preface"] > h1 {
   string-set: ChapterTitle self;
@@ -478,6 +448,7 @@ section[data-type="sect1"] > h1 { /* A-level headings */
   margin-bottom: 12pt;
   string-set: SectionTitle self; /* A-heads are also displayed in chapter footers */
 }
+
 
 section[data-type="sect2"] > h2 { /* B-level headings */
   font-family: 'OpenSans-Bold', sans-serif;
@@ -808,25 +779,20 @@ figcaption:before { /* figure captions are auto-numbered via the following */
 
 /* styling for a cover page */
 
-@page cover { 
-  margin: 0; 
-  padding: 0;
-  @bottom-left {
-    content: none;
-  }
-  @bottom-right {
-    content: none;
-  }
-}
-
-figure.cover {
-  margin: 0;
-  counter-reset: page 0;
-}
-
-figure.cover img {
+figure[data-type="cover"] {
   page: cover;
-  width: 100%;
+}
+
+figure[data-type="cover"] img {
+  max-width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+@page cover {
+  margin: 0;
+  padding: 0;
 }
 
 /* ------------------- SIDEBARS ------------------- */
@@ -952,10 +918,285 @@ blockquote p[data-type="attribution"] {
   text-align: right;
 }
 
+
+/* --------------------------------------------------------------------- */
+/* ------------------------------- Index ------------------------------- */
+/* --------------------------------------------------------------------- */
+
+section[data-type="index"] { page: index }
+
+@page index:left {
+  @bottom-left {
+    content: counter(page);
+    font-family: 'OpenSans-Regular', sans-serif;
+  }
+  @top-left-corner {
+    border-left: solid 20.4pt cmyk(0%,0%,0%,65%);
+  margin: -6pt 0 0 -6pt;
+  }
+  @left-top {
+  border-left: solid 20.4pt cmyk(0%,0%,0%,65%);
+  margin: -2pt 0 -2pt -6pt;
+  }
+  @bottom-left-corner {
+  border-left: solid 20.4pt cmyk(0%,0%,0%,65%);
+  margin: 0 0 -6pt -6pt;
+  }
+}
+
+@page index:right {
+  @bottom-right {
+    content: counter(page);
+    font-family: 'OpenSans-Regular', sans-serif;
+  }
+  @top-right-corner {
+    border-right: solid 20.4pt cmyk(0%,0%,0%,65%);
+  margin: -6pt -6pt 0 0;
+  }
+  @right-top {
+  border-right: solid 20.4pt cmyk(0%,0%,0%,65%);
+  margin: -2pt -6pt -2pt 0;
+  }
+  @bottom-right-corner {
+  border-right: solid 20.4pt cmyk(0%,0%,0%,65%);
+  margin: 0 -6pt -6pt 0;
+  }
+}
+
+section[data-type="index"] > h1 {text-align: left;}
+
+
+.indexnote {
+  content: "Weâd like to hear your suggestions for improving our indexes. Send email to index@oreilly.com.";
+  float: bottom;
+  margin-top: 15pt;
+  font-size: 8.5pt;
+  font-style: italic;
+  hyphens: none;
+}
+
+div[data-type="index"] {
+  column-count: 2;
+  column-gap: 15pt;
+}
+
+a[data-type="index:locator"] { content: target-counter(attr(href, url), page); }
+/* Need something for roman numerals */
+
+section[data-type="index"] ul {
+  margin: 0;
+  padding: 0;
+}
+
+section[data-type="index"] ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 0.17in;
+  text-indent: -0.17in;
+  font-size: 9pt;
+  font-family: 'Crimson-Roman', serif;
+}
+
+div[data-type="indexdiv"] h3 {
+  font-size: 14pt;
+  margin: 12pt 0 0 0;
+  font-family: 'OpenSans-CondBold', sans-serif;
+  font-size: 12pt;
+}
+
+section[data-type="index"],
+section[data-type="glossary"],
+section[data-type="bibliography"] {page-break-before: right;}
+
+/* --------------------------------------------------------------------- */
+/* ----------------------------- Glossary ------------------------------ */
+/* --------------------------------------------------------------------- */
+
+section[data-type="glossary"] { page: glossary }
+
+@page glossary:first {
+  @top-right { content: none }
+}
+  
+@page glossary:left {
+  @bottom-left { content: counter(page);
+    font-family: 'OpenSans-Regular', sans-serif;
+ }
+  @top-left {
+    content: string(term, first);
+    font-size: 9pt;
+  }
+}
+
+@page glossary:right {
+  @bottom-right { content: counter(page);
+    font-family: 'OpenSans-Regular', sans-serif;
+ }
+  @top-right {
+    content: string(term, last);
+    font-size: 9pt;
+  }
+}
+
+section[data-type="glossary"] dl { 
+  column-count: 2;
+  column-gap: 0.25in;
+  -ah-column-fill: balance;
+}
+
+section[data-type="glossary"] dt {
+  font-style: normal;
+  font-size: 9pt;
+  string-set: term self;
+}
+
+section[data-type="glossary"] dd p { font-size: 9pt }
+
+section[data-type="glossary"] dd { font-size: 9pt }
+
+/* --------------------------------------------------------------------- */
+/* --------------------------- Bibliography ---------------------------- */
+/* --------------------------------------------------------------------- */
+
+section[data-type="bibliography"] { page: bibliography }
+
+@page bibliography:first {
+  @top-right { content: none }
+}
+  
+@page bibliography:left {
+  @bottom-left { content: counter(page);
+    font-family: 'OpenSans-Regular', sans-serif;
+ }
+}
+
+@page bibliography:right {
+  @bottom-right { content: counter(page);
+    font-family: 'OpenSans-Regular', sans-serif;
+ }
+}
+
+/* --------------------------------------------------------------------- */
+/* -------------------------- About/Colophon --------------------------- */
+/* --------------------------------------------------------------------- */
+
+section.abouttheauthor { page: abouttheauthor }
+
+@page abouttheauthor {
+  border-bottom: none;
+    @top-right { content: none }
+    @bottom-left { content: none }
+    @bottom-right { content: none }
+}
+
+section[data-type="colophon"] { page: colophon }
+
+section.abouttheauthor h1,
+ section[data-type="colophon"] h1 {}
+@page colophon {
+  border-bottom: none;
+    @top-right { content: none }
+    @bottom-left { content: none }
+    @bottom-right { content: none }
+}
+
+
+@page toc:blank {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+@page chapter:blank {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+@page appendix:blank {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+@page preface:blank {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+@page glossary:blank {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+@page bibliography:blank {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+@page index:blank {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+
 /* ------------------- PAGEBREAK HANDLING ------------------- */
 
 /* force a page break */
 
 div.hard-pagebreak {
   page-break-after: always;
+}
+
+/* ------------------- PDF BOOKMARKS ------------------- */
+
+/* bookmark labels will be included for the headings listed below */
+
+nav[data-type="toc"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+div[data-type="part"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+section[data-type="preface"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+section[data-type="foreword"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+section[data-type="chapter"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+section[data-type="appendix"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+section[data-type="sect1"] > h1 {
+  bookmark-level: 2;
+  bookmark-state: closed;
+}
+
+section[data-type="index"] > h1 {
+  bookmark-level: 1;
+  bookmark-state: closed;
+}
+
+section[data-type="glossary"] { 
+  bookmark-level: 1;
+  bookmark-state: closed;
+  bookmark-label: attr(data-pdf-bookmark);
+}
+
+section[data-type="bibliography"] {
+  bookmark-level: 1;
+  bookmark-state: closed;
+  bookmark-label: attr(data-pdf-bookmark); 
+}
+
+section.abouttheauthor {
+  bookmark-level: 1;
+  bookmark-state: closed;
+  bookmark-label: attr(data-pdf-bookmark); 
 }
