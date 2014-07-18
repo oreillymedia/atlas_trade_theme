@@ -83,7 +83,7 @@ sub {
 span.lineannotation {
   font-style: italic;
   color: #A62A2A;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
 }
 
 span.underline { text-decoration: underline; }
@@ -141,7 +141,7 @@ h1, div.toc-title, h2, h3, h4, h5 {
   font-weight: bold;
   text-align: left;
   page-break-after: avoid !important;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
 }
 
 div.toc-title {
@@ -228,7 +228,7 @@ div.figure h6 {
   font-size: 75%;
   text-align: center;
   font-weight: normal;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   color: #000;
   padding: 0;
   page-break-before: avoid;
@@ -262,7 +262,7 @@ aside[data-type="sidebar"] {
 div.sidebar-title, aside[data-type="sidebar"] h5 {
   font-weight: bold;
   font-size: 110%;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -277,7 +277,7 @@ div.sidebar div.informalfigure div.caption {
   text-align: center;
   font-weight: normal;
   font-style: italic;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   color: #000;
   padding: 5px !important;
   page-break-before: avoid;
@@ -328,7 +328,7 @@ div.caution h3,
 div.important h3 {
   font-weight: bold;
   font-size: 1em;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -407,7 +407,7 @@ tr:nth-of-type(even) {
 }
 
 thead {
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   color: #000;
   font-weight: bold;
   margin-top: 10px;
@@ -442,7 +442,7 @@ table caption{
   font-size: 75%;
   font-weight: normal;
   font-style: italic;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   margin: 10px 0 0 0 !important;
   text-align: left;
   padding: 0;
@@ -513,7 +513,7 @@ div[data-type="example"] {
 div[data-type="example"] h1, div[data-type="example"] h2, div[data-type="example"] h3, div[data-type="example"] h4, div[data-type="example"] h5, div[data-type="example"] h6 {
   font-style: italic;
   font-weight: normal;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   margin: 10px 0 5px 0 !important;
   border-bottom: 1px solid #000000;
 }
@@ -532,7 +532,7 @@ span.gray { /* Added for DOM Enlightenment 9781449342845 */
 
 section[data-type="titlepage"] > div > h1 {
   font-size: 3em;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-weight: bold;
   margin: 50px 0 10px 0 !important;
   line-height: 1;
@@ -541,7 +541,7 @@ section[data-type="titlepage"] > div > h1 {
 
 section[data-type="titlepage"] > div > h2[data-type="author"] {
   font-size: 1.5em;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-weight: bold;
   margin: 50px 0 !important;
   text-align: center;
@@ -583,21 +583,21 @@ section.preface[title="Dedication"] p {
 div.colophon h1.title {
   font-size: 1.3em;
   margin: 0 !important;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-weight: normal;
 }
 
 div.colophon h2.subtitle {
   margin: 0 !important;
   color: #000;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-size: 1em;
   font-weight: normal;
 }
  
 div.colophon div.author h3.author {
   font-size: 1.1em;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   margin: 10px 0 0 !important;
   font-weight: normal;
 }
@@ -606,14 +606,14 @@ div.colophon div.editor h4, div.colophon div.editor h3.editor {
   color: #000;
   font-size: 0.8em;
   margin: 15px 0 0 !important;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-weight: normal;
 }
 
 div.colophon div.editor h3.editor {
   font-size: 0.8em;
   margin: 0 !important;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-weight: normal;
 }
 
@@ -638,7 +638,7 @@ div.timestamp p {
 div.colophon[title="About the Author"] h1.title, div.colophon[title="Colophon"] h1.title {
   font-size: 1.5em;
   margin: 0 !important;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-weight: bold;
 }
 
@@ -675,7 +675,7 @@ blockquote, div.blockquote {
 }
 
 blockquote p, div.blockquote p {
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   font-style: italic;
 }
 blockquote p[data-class="author"],
@@ -892,7 +892,7 @@ div.equation {
 div.equation-title {
   font-style: italic;
   font-weight: normal;
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   margin: 20px 0 10px 0 !important;
   page-break-after: avoid;
 }
@@ -971,6 +971,27 @@ div.index ul li {
 div.index ul li ul li {
     margin-left: 15px;
 }
+
+
+/* ----------------- Appendix ----------------- */
+section[data-type="appendix"] section[data-type="sect1"] h1 {
+    margin-bottom: 0;
+    padding:0px;
+}
+
+section[data-type="appendix"] section[data-type="sect1"] dl { 
+    font-size: 90%;
+    clear: both;
+     padding:0px;
+}   
+
+section[data-type="appendix"] section[data-type="sect1"] dt a { 
+ margin-top: -5px;
+ padding:0px;}
+
+section[data-type="appendix"] section[data-type="sect1"] dd p {
+ padding:0px;
+ margin-bottom: -5px;}
 
 /* ----------------- syntax highlighting and coloring text in general ----------------- */
 
@@ -1170,7 +1191,7 @@ div.blockquote_sampler_toc {
 /* keep this body statement last before custom placeholder */
 
 body {
-  font-family: sans-serif, "DejaVuSans", "ArialUnicode"";
+  font-family: sans-serif, "DejaVuSans", "ArialUnicode";
   text-align: left;
 }
 
