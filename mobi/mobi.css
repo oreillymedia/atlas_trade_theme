@@ -179,7 +179,9 @@ section[data-type="chapter"] > div > h1,
 section[data-type="preface"] > div > h1,
 section[data-type="appendix"] > div > h1,
 section[data-type="glossary"] > div > h1,
-section[data-type="index"] > div > h1 { /* larger chapter title */
+section[data-type="index"] > div > h1,
+section[data-type="bibliography"] > div > h1
+ { /* larger chapter title */
   font-size: 2em;
   line-height: 1;
   margin-bottom: 50px;
