@@ -1193,8 +1193,7 @@ div.comment-identifier {
 
 /* remove <img> and <i> tags */
 div.comment-identifier img,
-div.comment-identifier i { display: none } 
-
+div.comment-identifier i { display: none }
 
 /* ------------------- PAGEBREAK HANDLING ------------------- */
 
