@@ -41,7 +41,8 @@
 }
 
 /* Footnote settings */
-span[data-type="footnote"] {
+span[data-type="footnote"],
+h1 > span[data-type="footnote"] {
   -ah-float: footnote;
   font-size: 8pt;
   line-height: 10pt;
@@ -49,6 +50,7 @@ span[data-type="footnote"] {
   margin-bottom: 3pt;
   text-align: left;
   text-indent: 0;
+  font-weight: normal;
 }
 
 ::footnote-call,
@@ -379,6 +381,12 @@ nav[data-type="toc"] li[data-type="preface"] ol,
 nav[data-type="toc"] li[data-type="foreword"] ol {
   display: none;
 }
+
+/*hides footnotes from appearing in the TOC*/
+nav[data-type="toc"] span[data-type="footnote"] {
+ display: none;
+}
+
 
 /* ------------------- HEADINGS ------------------- */
 
