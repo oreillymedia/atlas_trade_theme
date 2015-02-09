@@ -748,6 +748,12 @@ dd { /* definition list descriptions */
   margin-left: 0.1667in;
 }
 
+/*lists within blockquotes*/
+blockquote ol li,
+blockquote ul li {
+   line-height: auto;
+}
+
 /* ------------------- TABLES ------------------- */
 
 table {
