@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 @page { /* defining overall trim size and page layout */
   size: 5.5in 8.5in; /* width, heigth */
   margin: 54pt 0.75in 54pt 0.75in; /* white space around the page */
@@ -646,6 +645,9 @@ div[data-type="part"] > h1:before {
   margin-bottom: 34pt;
 }
 
+div[data-type="part"].pagenumrestart
+{ counter-reset: page 1 FigureNumber TableNumber ExampleNumber EquationNumber footnote}
+
 /* ------------------- CHAPTERS ------------------- */
 
 @page chapter:first {
@@ -684,8 +686,11 @@ div[data-type="part"] > h1:before {
 section[data-type="chapter"] {
   page: chapter;
   page-break-before: right; /* forces new chapters to start on a right hand page */
-  counter-reset: TableNumber FigureNumber footnote;
+  counter-reset: FigureNumber TableNumber ExampleNumber EquationNumber footnote;;
 }
+
+section[data-type="chapter"].pagenumrestart
+{ counter-reset: page 1 FigureNumber TableNumber ExampleNumber EquationNumber footnote}
 
 /* ------------------- APPENDIXES ------------------- */
 
