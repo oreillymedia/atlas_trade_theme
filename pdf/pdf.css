@@ -149,7 +149,8 @@ section[data-type="titlepage"] h1 {
   line-height: 24pt;
 }
 
-section[data-type="titlepage"] h2 { /* book subtitle */
+section[data-type="titlepage"] h2,
+section[data-type="titlepage"] p.subtitle { /* book subtitle */
   font-family: 'OpenSans-SemiboldItalic', sans-serif, 'ArialUnicodeMS';
   font-size: 12pt;
   line-height: 15pt;
