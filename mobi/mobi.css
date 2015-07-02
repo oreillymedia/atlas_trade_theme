@@ -225,6 +225,11 @@ div.figure {
   page-break-inside: avoid;
 }
 
+figure {
+  text-indent: 0;
+  margin: 0;
+  padding: 0;}
+
 div.figure h6 {
   font-size: 75%;
   text-align: center;
