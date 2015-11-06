@@ -204,18 +204,29 @@ section[data-type="dedication"] {
   padding-top: 96pt;
 }
 
+section[data-type="dedication"] > h1 { display: none;}
+
 /* ------------------------------ praise ------------------------------- */
 
-section[data-type="dedication"].praise h2.title {
+section[data-type="dedication"].praise h1 {
   display: block;
-  font-family: "MyriadPro-SemiboldCond", 'ArialUnicodeMS';
+  font-family: "MyriadPro-SemiboldCond";
   font-weight: 600;
   font-size: 20pt;
   text-align: center;
   margin-bottom: .75in;
   margin-top: 0;
+  font-style: normal;
 }
 
+section[data-type="dedication"].praise {
+  text-align: right;}
+
+section[data-type="dedication"].praise h1 em {
+  font-family: "MyriadPro-SemiBoldIt";
+  font-style: italic;
+  font-stretch: semi-condensed;
+}
 section[data-type="dedication"].praise blockquote {
   hyphens: none;
   margin: 0 0 20pt 0;
