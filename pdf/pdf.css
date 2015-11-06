@@ -206,6 +206,7 @@ section[data-type="dedication"] {
 
 section[data-type="dedication"] > h1 { display: none;}
 
+
 /* ------------------------------ praise ------------------------------- */
 
 section[data-type="dedication"].praise h1 {
