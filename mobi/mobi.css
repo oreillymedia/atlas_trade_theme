@@ -471,6 +471,7 @@ pre {
   -webkit-hyphens: none;
   hyphens: none;
   adobe-hyphenate: none;
+  overflow-wrap: break-word;
 }
 
 div.note pre.programlisting, div.tip pre.programlisting, 
@@ -484,6 +485,7 @@ code {
   -webkit-hyphens: none;
   hyphens: none;
   adobe-hyphenate: none;
+  overflow-wrap: break-word;
 }
 
 code strong em, 
